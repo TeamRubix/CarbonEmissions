@@ -15,13 +15,14 @@ router.get('/login', (req, res) => {
 
 router.post('/register', (req, res) => {
     User.register(new User({
-        username: req.body.username
+        username: req.body.username,
+        userRole: req.body.userRole
     }),req.body.password,(err,user)=>{
         if(err){
             console.log(err)
         }
         else{
-            res.redirect('/cars')
+            res.redirect('/')
         }
     } )
 })
