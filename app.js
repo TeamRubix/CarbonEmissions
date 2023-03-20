@@ -45,11 +45,6 @@ mongoose.connect(process.env.CONNECTION_STRING).then((res) => {
 const passport = require('passport');
 const session = require('express-session');
 
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/auth', authRouter);
-app.use('/dashboard', dashboardRouter);
 //initialize session 
 app.use(session({
   secret:process.env.PASSPORT_SECRET,
@@ -66,6 +61,12 @@ passport.use(User.createStrategy())
 
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/auth', authRouter);
+app.use('/dashboard', dashboardRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
