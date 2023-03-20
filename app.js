@@ -4,9 +4,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+//Add Controllers Here
 const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
-const auth = require('./controllers/authentications');
+const authRouter = require('./controllers/authentications');
+
+const dashboardRouter=require('./controllers/dashboards');
 
 const app = express();
 
@@ -45,8 +48,8 @@ const session = require('express-session');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/auth', auth);
-
+app.use('/auth', authRouter);
+app.use('/dashboard', dashboardRouter);
 //initialize session 
 app.use(session({
   secret:process.env.PASSPORT_SECRET,
