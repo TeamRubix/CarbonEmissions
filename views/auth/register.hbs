@@ -15,6 +15,15 @@
                 <input name="confirm" id="confirm" type="password" required
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
         </fieldset>
+        <fieldset>
+                <label for="userRole" class="col-2 control-label">User Role: *</label>
+                <select name="userRole" id="userRole">
+                        <option value="Student">Student</option>
+                        <option value="Educator">Educator</option>
+                        <option value="HTR Faculty">HTR Faculty</option>
+                        <option value="Community Member">Community Member</option>
+                </select>
+        </fieldset>
         <fieldset >
                 <button class="btn-style">Register</button>
                 <hr />

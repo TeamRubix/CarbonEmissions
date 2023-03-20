@@ -7,24 +7,35 @@ router.get('/register', (req, res) => {
     res.render('auth/register', { title: 'Register' });
 })
 
-router.get('/login', (req, res) => {
-    res.render('auth/login', { title: 'Login' });
-})
 
 //post method to register user
 
 router.post('/register', (req, res) => {
     User.register(new User({
-        username: req.body.username
+        username: req.body.username,
+        userRole: req.body.userRole
     }),req.body.password,(err,user)=>{
         if(err){
             console.log(err)
         }
         else{
-            res.redirect('/cars')
+            res.redirect('/');
         }
     } )
 })
+
+
+router.get('/login', (req, res) => {
+    res.render('auth/login', { title: 'Login', user: req.user });
+})
+
+// post method for user login
+router.post('/login', 
+    passport.authenticate('local', {
+    successRedirect: '/dashboard/index',
+    failureRedirect: '/auth/login',
+    failureMessage: 'Invalid Login'
+}));
 
 
 
