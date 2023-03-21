@@ -162,8 +162,8 @@ footer>.flare {
 
 /**HOMEPAGE CSS*/
 .logo {
-  width: 100px;
-  height: 50px;
+  width: 80px;
+  height: auto;
 }
 
 /** About us in HomePage*/
@@ -417,7 +417,79 @@ section {
   transition: all 300ms ease;
 }
 
-// Viraj - LOGIN AND REGISTRATION CSS
+/**BLOG CSS*/
+
+
+.blog-post {
+  box-sizing: border-box !important;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 2rem;
+  margin: 2rem 0;
+  font-family:Quicksand,sans-serif !important;
+}
+
+.blog-post-info {
+  padding: 0 0.5rem;
+}
+
+
+.blog-post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10rem;
+  display: block;
+  filter: drop-shadow(3px 6px 4px #48484893);
+}
+
+.blog-post-author span {
+  display: block;
+  color: #00000080;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.blog-post-title {
+  font-size: 2.5rem;
+  margin: 1.1rem 0 2rem;
+}
+
+.blog-post-text {
+  margin: 3rem 0;
+  font-size: 1.2rem;
+  color: #000000b3;
+}
+
+.blog-post-cta {
+  display: inline-block;
+  padding: 1.1rem 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.0rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2rem;
+  background: linear-gradient(to right, #f12711, #f5af19 100%);
+}
+
+.blog-post-cta:hover {
+    transition: all 0.8s ease-out;
+    background: linear-gradient(to right, #f5af19, #f12711 100%);
+}
+
+@media (min-width: 768px) {
+  div#blog {
+      max-width: 960px !important;
+  }
+}
+
+
+
+ /* Viraj - LOGIN AND REGISTRATION CSS */
 
 #loginAuth {
   margin: auto;
@@ -451,4 +523,10 @@ section {
 
 #registerForm select {
   border: 1px solid #d0d0d0;
+}
+
+
+thead {
+  color: white;
+  background-image: linear-gradient(40deg, #f12711, #f5af19);
 }

@@ -1,1 +1,38 @@
-<h1>Dashboard</h1>
+<div class="text-center p-3">
+    <h1 class="display-4 fw-bold">Dashboard</h1>
+</div>
+
+<div class="m-auto text-center">
+    <a href="/dashboard/create" class="btn btn-dark">Add Food Emission Data</a>
+</div>
+
+{{#if emission}}
+    <table class="table  w-75 m-auto mt-5">
+    <thead class="text-center ">
+        <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Point of Origin</th>
+        <th scope="col">Transport Distance (km)</th>
+        <th scope="col">Weight (kg)</th>
+        <th scope="col">Units</th>
+        <th scope="col">Emission Values kg (CO2e TTW)</th>
+        <th scope="col">Emission Values kg (CO2e WTW)</th>
+        <th scope="col">CO2e per kg</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    {{#each emission}}
+        <tr class="m-auto text-center">
+            <td>{{ this.foodName }}</td>
+            <td>{{ this.originPoint }}</td>
+            <td>{{ this.transportDistance }}</td>
+            <td>{{ this.weight }}</td>
+            <td>{{ this.unitsTotal }}</td>
+            <td>{{ this.valueTTW }}</td>
+            <td>{{ this.valueWTW }}</td>
+            <td>{{ this.valuePerkg }}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+{{/if}}

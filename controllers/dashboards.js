@@ -1,11 +1,44 @@
 const express=require('express');
 const router=express.Router();
+const FoodEmission = require('../models/foodEmission');
 
 const global = require('../controllers/globalFunctions');
 
 
-router.get('/index', global.isAuthenticated,(req,res)=>{
-    res.render('dashboard/index',{title:'Dashboard', user: req.user})
-})
+router.get('/', global.isAuthenticated,(req,res)=>{
+    FoodEmission.find((err,emission) => {
+        if(err) {
+            console.log(err);
+        }
+        else {
+            res.render('dashboard/index',{
+                title:'Dashboard',
+                emission: emission, 
+                user: req.user
+            });
+        }
+    });
+    
+});
 
-module.exports= router
+router.get('/create', global.isAuthenticated,(req,res)=>{
+    res.render('dashboard/create', {
+        title:'Dashboard - Food Emission Data',
+        user: req.user
+    });
+    
+    
+});
+
+router.post('/create', global.isAuthenticated,(req,res)=>{
+    FoodEmission.create(req.body,(err, emission) => {    
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect('/dashboard');
+        }
+    });
+});
+
+module.exports= router;
