@@ -42,19 +42,26 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/dashboard/index">Dashboard</a>
         </li>
-       
+       </ul>
 
 
-      </ul>
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/register">Register</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/login">login</a>
-        </li>
-      </ul>
+            {{#if user}}
+            <li class="nav-item">
+                <a class="nav-link" href="#">{{user.username}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/auth/logout">Logout</a>
+            </li>
+            {{else}}
+              <li class="nav-item">
+                  <a class="nav-link" href="/auth/register">Register</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/auth/login">Login</a>
+              </li>
+            {{/if}}
+        </ul>        
 
     </div>
   </div>
