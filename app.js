@@ -8,8 +8,9 @@ const logger = require('morgan');
 const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
 const authRouter = require('./controllers/authentications');
+const dashboardRouter = require('./controllers/dashboards');
 
-const dashboardRouter=require('./controllers/dashboards');
+const blogRouter = require('./controllers/blogs');
 
 const app = express();
 
@@ -25,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(__dirname, "node_modules")));
 
-//mongoDb connection
+//mongoDb connection starts
 
 if (process.env.NODE_ENV != 'production') {
   require('dotenv').config();
@@ -41,13 +42,15 @@ mongoose.connect(process.env.CONNECTION_STRING).then((res) => {
 }
 )
 
-//passport config
+//mongoose connection ends
+
+//passport config starts
 const passport = require('passport');
 const session = require('express-session');
 
 //initialize session 
 app.use(session({
-  secret:process.env.PASSPORT_SECRET,
+  secret: process.env.PASSPORT_SECRET,
   resave: true,
   saveUninitialized: false
 }))
@@ -56,16 +59,20 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-const User=require('./models/user')
+const User = require('./models/user')
 passport.use(User.createStrategy())
 
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
+
+//passport config ends
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/blog', blogRouter);
 
 
 // catch 404 and forward to error handler

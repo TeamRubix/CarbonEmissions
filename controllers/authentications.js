@@ -19,7 +19,9 @@ router.post('/register', (req, res) => {
             console.log(err)
         }
         else{
+
             res.redirect('/');
+
         }
     } )
 })

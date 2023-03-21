@@ -21,6 +21,7 @@ th {
 p,
 a,
 li {
+  list-style-type: none;
   text-decoration: none;
   font-family: 'Roboto', sans-serif !important;
   font-weight: 500;
@@ -42,6 +43,67 @@ li {
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+label{
+  min-width: 100px;
+  margin: 8px 0;
+}
+input{
+  border: none;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
+  border-radius: 2rem;
+  padding: 3px 8px;
+}
+
+.btn-style{
+  border-radius: 2rem;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  /* margin-left: 250px; */
+  color: #fff;
+  
+  border: none;
+  background-image: linear-gradient(90deg,
+    #f12711
+    , 
+    #f5af19);
+}
+
+div.button{
+  /* margin-right: 180px; */
+  
+  align-items: center;
+  display: flex;
+}
+
+
+
+option,select{
+  border: none;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
+  border-radius: 2rem;
+  padding: 3px 5px;
+}
+
+ textarea{
+  width: 70%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
+  border-radius: 1rem;
+  padding: 3px 5px;
+  resize: none;
+  
+ }
+
+ .formfield{
+  display: flex;
+ }
+
+
 
 /* HOMEPAGE CSS - ALISHA */
 
