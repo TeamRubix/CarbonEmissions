@@ -7,9 +7,6 @@ router.get('/register', (req, res) => {
     res.render('auth/register', { title: 'Register' });
 })
 
-router.get('/login', (req, res) => {
-    res.render('auth/login', { title: 'Login' });
-})
 
 //post method to register user
 
@@ -22,10 +19,25 @@ router.post('/register', (req, res) => {
             console.log(err)
         }
         else{
-            res.redirect('/')
+
+            res.redirect('/');
+
         }
     } )
 })
+
+
+router.get('/login', (req, res) => {
+    res.render('auth/login', { title: 'Login', user: req.user });
+})
+
+// post method for user login
+router.post('/login', 
+    passport.authenticate('local', {
+    successRedirect: '/dashboard/index',
+    failureRedirect: '/auth/login',
+    failureMessage: 'Invalid Login'
+}));
 
 
 
