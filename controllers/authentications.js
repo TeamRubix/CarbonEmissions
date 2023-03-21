@@ -33,12 +33,39 @@ router.get('/login', (req, res) => {
 
 // post method for user login
 router.post('/login', 
-    passport.authenticate('local', {
-    successRedirect: '/dashboard/index',
-    failureRedirect: '/auth/login',
-    failureMessage: 'Invalid Login'
-}));
+// (res, req) => {
+//    console.log(User.find(User.userRole));
+    // User.find((err, user) =>{
+        // if(err){
+            
+        //     console.log(err);
+        //     console.log("user not found");
+        // }
+        // else{
+        //     console.log("user found");
+        //     // console.log(User.userRole);
+            
+        //     if(user.userRole == 'Educator'){
+        //         console.log("user Educator");
+                 passport.authenticate('local', {
+                    successRedirect: '/dashboard/index',
+                    failureRedirect: '/auth/login'
+                })
+            // }
+        // }
+    // })
+);
 
+
+router.get('/logout', (req, res) => {
+    req.session.messages = [];
+    req.logout((err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/');
+    });
+});
 
 
 
