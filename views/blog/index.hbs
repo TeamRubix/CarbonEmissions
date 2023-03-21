@@ -1,11 +1,27 @@
-<h1>Blogs</h1>
-<div>
-    {{#each blogs}}
-    <ul>
-        <li>Title: {{this.title}}</li>
-        <li>Description: {{this.description}}</li>
-    </ul>
-    {{/each}}
-
-    
+<div class="text-center p-3">
+    <h1 class="display-4 fw-bold">Community Communication</h1>
 </div>
+<hr class="w-75 m-auto text-center">
+
+{{#each blogs}}
+    <div id="blog" class="container-fluid">
+        
+        <div class="blog-post row">
+            <div class="blog-post-img col-sm-12 col-md-6">
+                <img src="/images/about-header.jpg" alt="">
+            </div>
+            <div class="blog-post-info col-sm-12 col-md-6">
+                <h1 class="blog-post-title">
+                    <span>{{this.title}}</span>
+                </h1>
+                <hr>
+                <p class="blog-post-text">
+                    {{this.description}}
+                </p>
+                </div>
+                
+            </div>
+        </div>
+           
+    </div> 
+{{/each}}
