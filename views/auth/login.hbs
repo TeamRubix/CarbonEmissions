@@ -1,29 +1,31 @@
-<div class="shadow bg-body rounded w-50" id="loginAuth">
-        <div id="title" class="rounded">
-                <h1 class="display-3 ">Login</h1>
-        </div>
+<div class="register-container mt-5">
+        <h1 class="text-center">Login</h1>
         <form method="post" class="p-4" id="loginForm">
-                <fieldset class="m-4">
+                <div class="item" id="item-1">
                         {{!-- <label for="username" class="col-1 form-label">Username: </label> --}}
-                        <input class="form-control text-center m-auto w-50" name="username" id="username" placeholder="Username" required />
-                </fieldset>
-                <fieldset class="m-4">
+                        <input class="form-control text-center m-auto w-50" name="username" id="username"
+                                placeholder="Username" required />
+                </div>
+                <div class="item" id="item-2">
                         {{!-- <label for="password" class="col-1 form-label">Password: </label> --}}
-                        <input class="form-control text-center m-auto w-50" name="password" id="password" type="password" placeholder="Password" required />
-                </fieldset>
-                
-                <fieldset>
-                        <button class=" btn btn-lg btn-primary m-3">Login</button>
+                        <input class="form-control text-center m-auto w-50" name="password" id="password"
+                                type="password" placeholder="Password" required />
+                </div>
+
+                <div class="item" id="item-6">
+                        <button class="btn-style" type="submit">Login</button>
                         <a href="/auth/google">
-                         <img src="/images/google.png" alt="Sign in with Google" /></a>
-                </fieldset>
-                
+                                <img class="google" src="/images/google.png" alt="Sign in with Google" />
+                        </a>
+
+                </div>
+
         </form>
-        
+
         <hr class="w-50 m-auto text-center border-danger">
 
-        <fieldset>
+        <div>
                 <p class="h5 m-4 mt-3"> Need an account? <a href="/auth/register" title="Register">Register</a> </p>
-        </fieldset>
+        </div>
 
 </div>
