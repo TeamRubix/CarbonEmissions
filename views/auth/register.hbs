@@ -1,35 +1,42 @@
-<h1>Register</h1>
+<div class="shadow bg-body rounded w-50" id="loginAuth">
+        <div id="regTitle" class="rounded text-center">
+                <h1 class="display-3 ">Register</h1>
+        </div>
+        <form method="post" class="p-4" id="registerForm">
+                <fieldset class="m-4">
+                        {{!-- <label for="username" class="form-label">Username: </label> --}}
+                        <input class="form-control text-center m-auto w-75" name="username" id="username" required type="email" placeholder="Enter Your Email" />
+                </fieldset>
+                <fieldset class="m-4">
+                        {{!-- <label for="password" class="col-2 form-label">Password: </label> --}}
+                        <input class="form-control text-center m-auto w-75" name="password" id="password" type="password" required
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" />
+                </fieldset>
+                <fieldset class="m-4">
+                        {{!-- <label for="confirm" class="col-2 form-label">Confirm: </label> --}}
+                        <input class="form-control text-center m-auto w-75" name="confirm" id="confirm" type="password" required
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm Password" />
+                </fieldset>
+                <fieldset class="m-5">
+                        {{!-- <label for="userRole" class="col-2 form-label">User Role: </label> --}}
+                        <select class="form-control  text-center m-auto w-50" name="userRole" id="userRole">
+                                <option value="">Select A User Role</option>
+                                <option value="Student">Student</option>
+                                <option value="Educator">Educator</option>
+                                <option value="HTRFaculty">HTR Faculty</option>
+                                <option value="CommunityMember">Community Member</option>
+                        </select>
+                </fieldset>
+        
+                <fieldset class="m-auto text-center">
+                        <button class=" btn btn-lg btn-dark m-3 " type="submit">Register</button><a href="/auth/google">
+                         <img src="/images/google.png" alt="Sign in with Google" /></a>
+                        
+                </fieldset>
+        </form>
+        <hr class="w-50 m-auto text-center border-success">
 
-<form method="post">
-        <fieldset>
-                <label for="username" class="col-2 control-label">Username: *</label>
-                <input name="username" id="username" required type="email" placeholder="email@email.com" />
+        <fieldset  class="m-auto text-center">
+                <p class="h5 m-4 mt-3">Already have an account? <a href="/auth/login" title="Login">Login</a></p>
         </fieldset>
-        <fieldset>
-                <label for="password" class="col-2 control-label">Password: *</label>
-                <input name="password" id="password" type="password" required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
-        </fieldset>
-        <fieldset>
-                <label for="confirm" class="col-2 control-label">Confirm: *</label>
-                <input name="confirm" id="confirm" type="password" required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
-        </fieldset>
-
-        <fieldset>
-                <label for="userRole" class="col-2 control-label">User Role: *</label>
-                <select name="userRole" id="userRole">
-                        <option value="Student">Student</option>
-                        <option value="Educator">Educator</option>
-                        <option value="HTR Faculty">HTR Faculty</option>
-                        <option value="Community Member">Community Member</option>
-                </select>
-        </fieldset>
-
-        <fieldset>
-
-                <button class="btn-style">Register</button>
-                <hr />
-                Already have an account? <a href="/auth/login" title="Login">Login</a>
-        </fieldset>
-</form>
+</div>

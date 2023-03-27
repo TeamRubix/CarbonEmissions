@@ -66,6 +66,22 @@ passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
 
+//GOOGLE auth  strategy for passport
+const googleStrategy = require('passport-google-oauth20').Strategy;
+passport.use(new googleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: process.env.GOOGLE_CALLBACK_URL
+}, (accessToken, refreshToken, profile, done) => {
+  User.findOrCreate({oauthId: profile.id}, {
+    username: profile.displayName,
+    oauthProvider: 'Google'
+  }, (err, user)=> {
+    return done (err, user);
+  })
+}));
+
+
 //passport config ends
 
 app.use('/', indexRouter);

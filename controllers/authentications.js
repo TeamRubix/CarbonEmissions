@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const User = require('../models/user')
+const User = require('../models/user');
 
 router.get('/register', (req, res) => {
     res.render('auth/register', { title: 'Register' });
@@ -33,13 +33,50 @@ router.get('/login', (req, res) => {
 
 // post method for user login
 router.post('/login', 
-    passport.authenticate('local', {
-    successRedirect: '/dashboard/index',
+// (res, req) => {
+//    console.log(User.find(User.userRole));
+    // User.find((err, user) =>{
+        // if(err){
+            
+        //     console.log(err);
+        //     console.log("user not found");
+        // }
+        // else{
+        //     console.log("user found");
+        //     // console.log(User.userRole);
+            
+        //     if(user.userRole == 'Educator'){
+        //         console.log("user Educator");
+                 passport.authenticate('local', {
+                    successRedirect: '/dashboard',
+                    failureRedirect: '/auth/login'
+                })
+            // }
+        // }
+    // })
+);
+
+
+router.get('/logout', (req, res) => {
+    req.logout((err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/');
+    });
+});
+
+
+
+router.get('/google', passport.authenticate('google', {
+    scope: ['profile']
+}),(req, res) => {});
+
+router.get('/google/callback', passport.authenticate('google', {
+    successRedirect: '/',
     failureRedirect: '/auth/login',
-    failureMessage: 'Invalid Login'
-}));
-
-
+    failureMessage: 'Could not authenticate with Google'
+}))
 
 
 module.exports = router;

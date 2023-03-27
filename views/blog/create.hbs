@@ -1,27 +1,30 @@
-<h1>Create Blog</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fuga nam facere totam dolorem quae quia ut laborum
-    molestiae at!</p>
+<div class="text-center p-3">
+    <h1 class="display-4 fw-bold">Create Blog</h1>
+</div>
+<hr class="w-75 m-auto text-center">
 
-<form method="post">
+<div class="m-auto text-center" id="createBlog">
+    <form method="post">
 
 
-    <fieldset>
-        <label for="title">Title: *</label>
-        <input type="text" name="title" id="title" required />
-    </fieldset>
+        <fieldset class="m-5">
+            <label for="title">Title: *</label>
+            <input type="text" name="title" id="title" required />
+        </fieldset>
 
-    <fieldset>
-        <div class="formfield">
-            <label for="description">Description: *</label>
-            <textarea id="description" name="description"></textarea>
+        <fieldset class="m-5">
+            <div class="d-flex justify-content-center">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="3" cols="60"></textarea>
+            </div>
+
+        </fieldset>
+
+
+        <div class="button ">
+            <button class="btn-style ">Save</button>
         </div>
-
-    </fieldset>
-
-
-    <div class="button">
-        <button class="btn-style">Save</button>
-    </div>
-    
-    
-</form>
+        
+        
+    </form>
+</div>

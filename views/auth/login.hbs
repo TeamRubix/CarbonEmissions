@@ -1,17 +1,29 @@
-<h1>Login</h1>
+<div class="shadow bg-body rounded w-50" id="loginAuth">
+        <div id="title" class="rounded">
+                <h1 class="display-3 ">Login</h1>
+        </div>
+        <form method="post" class="p-4" id="loginForm">
+                <fieldset class="m-4">
+                        {{!-- <label for="username" class="col-1 form-label">Username: </label> --}}
+                        <input class="form-control text-center m-auto w-50" name="username" id="username" placeholder="Username" required />
+                </fieldset>
+                <fieldset class="m-4">
+                        {{!-- <label for="password" class="col-1 form-label">Password: </label> --}}
+                        <input class="form-control text-center m-auto w-50" name="password" id="password" type="password" placeholder="Password" required />
+                </fieldset>
+                
+                <fieldset>
+                        <button class=" btn btn-lg btn-primary m-3">Login</button>
+                        <a href="/auth/google">
+                         <img src="/images/google.png" alt="Sign in with Google" /></a>
+                </fieldset>
+                
+        </form>
+        
+        <hr class="w-50 m-auto text-center border-danger">
 
-<form method="post">
-        <fieldset >
-                <label for="username" class="col-2 control-label">Username: *</label>
-                <input name="username" id="username" required />
+        <fieldset>
+                <p class="h5 m-4 mt-3"> Need an account? <a href="/auth/register" title="Register">Register</a> </p>
         </fieldset>
-        <fieldset >
-                <label for="password" class="col-2 control-label">Password: *</label>
-                <input name="password" id="password" type="password" required />
-        </fieldset>
-        <fieldset >
-                <button class="btn-style">Login</button>
-                <hr />
-                Need an account? <a href="/auth/register" title="Register">Register</a>
-        </fieldset>
-</form>
+
+</div>
