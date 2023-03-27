@@ -10,7 +10,7 @@ const path =require('path');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Green Guage' });
+  res.render('index', { title: 'Green Guage', user: req.user  });
 });
 
 router.get('/index', function (req, res) {

@@ -4,7 +4,7 @@ const passport = require('passport');
 const User = require('../models/user');
 
 router.get('/register', (req, res) => {
-    res.render('auth/register', { title: 'Register' });
+    res.render('auth/register', { title: 'Register', user: req.user });
 })
 
 
