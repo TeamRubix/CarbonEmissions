@@ -6,10 +6,10 @@ var router = express.Router();
 const path =require('path');
 
 //set path for capturing static assets from the public directory
-app.use(express.static(path.join(__dirname,'public')));
+// app.use(express.static(path.join(__dirname,'public')));
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Green Guage' });
 });
 
