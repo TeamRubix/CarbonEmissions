@@ -33,7 +33,7 @@ router.get('/login', (req, res) => {
 
 // post method for user login
 router.post('/login', 
-// (res, req) => {
+//(res, req) => {
 //    console.log(User.find(User.userRole));
     // User.find((err, user) =>{
         // if(err){
@@ -45,8 +45,9 @@ router.post('/login',
         //     console.log("user found");
         //     // console.log(User.userRole);
             
-        //     if(user.userRole == 'Educator'){
-        //         console.log("user Educator");
+            // if(req.body.userRole == 'Educator'){
+                // console.log(req.user.userRole);
+                
                  passport.authenticate('local', {
                     successRedirect: '/dashboard',
                     failureRedirect: '/auth/login'
