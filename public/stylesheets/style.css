@@ -414,6 +414,85 @@ section {
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
+/* HOME CANADA MAPS CSS */
+.custommargin{
+  margin-top: 50px;
+}
+#canadaMap {
+  width: 60vw;
+  margin: 0 auto;
+  display: block;
+  padding-top:10vh;
+}
+svg {
+ fill: lightgrey;
+}
+#NFL_L{
+  fill:Indigo;
+  color:Indigo;
+}
+#BC{
+  fill: Salmon;
+  color: Salmon;
+}
+#Nova_Scotia{
+  fill: sandybrown;
+  color: sandybrown;
+}
+#Quebec{
+  fill:lightcoral;
+  color:lightcoral;
+}
+#Ontario{
+  fill:lightseagreen;
+  color:lightseagreen;
+}
+#Yukon{
+  fill: #DC143C;
+  color: #DC143C;
+}
+#NWT{
+  fill:orange;
+  color:orange;
+}
+#Nunavut{
+  fill:yellow;
+  color:yellow;
+}
+#PEI{
+  fill:#800000;
+  color:#800000;
+}
+#New_Brunswick{
+  fill:#AFEEEE;
+  color:#AFEEEE;
+}
+#Manitoba{
+  fill:#7CFC00;
+  color:#7CFC00;
+}
+#Sask{
+  fill: turquoise;
+  color: turquoise;
+}
+#Alberta{
+  fill: #9932CC;
+  color: #9932CC;
+}
+#svg2:hover{ 
+ fill:#f5af19;
+ cursor: pointer;
+}
+.province_text{
+ font-size:11px;
+ fill:black;}
+.st2{fill:none;}
+.st3{font-family:'MyriadPro-Regular';}
+.st5{fill:#FFFFFF;}
+.st6{fill:black;}
+
+
+
 
 /**BLOG CSS*/
 
