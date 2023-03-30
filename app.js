@@ -66,22 +66,6 @@ passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
 
 
-<<<<<<< HEAD
-//GOOGLE auth  strategy for passport
-// const googleStrategy = require('passport-google-oauth20').Strategy;
-// passport.use(new googleStrategy({
-//   clientID: process.env.GOOGLE_CLIENT_ID,
-//   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-//   callbackURL: process.env.GOOGLE_CALLBACK_URL
-// }, (accessToken, refreshToken, profile, done) => {
-//   User.findOrCreate({oauthId: profile.id}, {
-//     username: profile.displayName,
-//     oauthProvider: 'Google'
-//   }, (err, user)=> {
-//     return done (err, user);
-//   })
-// }));
-=======
 // GOOGLE auth  strategy for passport
 const googleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new googleStrategy({
@@ -96,7 +80,6 @@ passport.use(new googleStrategy({
     return done (err, user);
   })
 }));
->>>>>>> a0aff7bf5a261f96dea3825f38d656059f34a646
 
 
 //passport config ends
