@@ -1,23 +1,23 @@
-<div class="shadow bg-body rounded w-50" id="loginAuth">
-        <div id="regTitle" class="rounded text-center">
-                <h1 class="display-3 ">Register</h1>
-        </div>
-        <form method="post" class="p-4" id="registerForm">
-                <fieldset class="m-4">
+<div class="register-container mt-5">
+        <h1 class="text-center">Register User</h1>
+        <form method="post" id="registerForm">
+                <div class="item" id="item-1">
                         {{!-- <label for="username" class="form-label">Username: </label> --}}
-                        <input class="form-control text-center m-auto w-75" name="username" id="username" required type="email" placeholder="Enter Your Email" />
-                </fieldset>
-                <fieldset class="m-4">
+                        <input class="form-control text-center m-auto w-75" name="username" id="username" required
+                                type="email" placeholder="Enter Your Email" />
+                </div>
+                <div class="item" id="item-2">
                         {{!-- <label for="password" class="col-2 form-label">Password: </label> --}}
-                        <input class="form-control text-center m-auto w-75" name="password" id="password" type="password" required
-                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" />
-                </fieldset>
-                <fieldset class="m-4">
+                        <input class="form-control text-center m-auto w-75" name="password" id="password"
+                                type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                placeholder="Enter Password" />
+                </div>
+                <div class="item" id="item-3">
                         {{!-- <label for="confirm" class="col-2 form-label">Confirm: </label> --}}
-                        <input class="form-control text-center m-auto w-75" name="confirm" id="confirm" type="password" required
-                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm Password" />
-                </fieldset>
-                <fieldset class="m-5">
+                        <input class="form-control text-center m-auto w-75" name="confirm" id="confirm" type="password"
+                                required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm Password" />
+                </div>
+                <div class="item" id="item-4">
                         {{!-- <label for="userRole" class="col-2 form-label">User Role: </label> --}}
                         <select class="form-control  text-center m-auto w-50" name="userRole" id="userRole">
                                 <option value="">Select A User Role</option>
@@ -26,17 +26,17 @@
                                 <option value="HTRFaculty">HTR Faculty</option>
                                 <option value="CommunityMember">Community Member</option>
                         </select>
-                </fieldset>
-        
-                <fieldset class="m-auto text-center">
-                        <button class=" btn btn-lg btn-dark m-3 " type="submit">Register</button><a href="/auth/google">
-                         <img src="/images/google.png" alt="Sign in with Google" /></a>
-                        
-                </fieldset>
-        </form>
-        <hr class="w-50 m-auto text-center border-success">
+                </div>
 
-        <fieldset  class="m-auto text-center">
+                <div class="item" id="item-6">
+                        <button class="btn-style" type="submit">Register</button>
+                        <a href="/auth/google">
+                                <img class="google" src="/images/google.png" alt="Sign in with Google" /></a>
+
+                </div>
+        </form>
+        <hr>
+        <div class="">
                 <p class="h5 m-4 mt-3">Already have an account? <a href="/auth/login" title="Login">Login</a></p>
-        </fieldset>
+        </div>
 </div>

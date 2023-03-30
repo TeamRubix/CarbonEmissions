@@ -5,7 +5,7 @@ const FoodEmission = require('../models/foodEmission');
 const global = require('../controllers/globalFunctions');
 
 
-router.get('/', global.isAuthenticated,(req,res)=>{
+router.get('/', (req,res)=>{
     FoodEmission.find((err,emission) => {
         if(err) {
             console.log(err);
