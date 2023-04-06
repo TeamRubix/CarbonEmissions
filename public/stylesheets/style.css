@@ -66,13 +66,12 @@ li {
 
 
 .user-banner {
-  /* display: inline; */
-  display: block;
-  /* padding: 0px 10px; */
-  padding-left: 3px;
-  padding-right: 3px;
+
+  display: inline-block;
+ padding:  0.5rem;
   border-radius: 1rem;
-  background-color: #FFC107 !important;
+  
+  background-image: linear-gradient(40deg, #f12711, #f5af19);
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
   color: #fff;
 }
@@ -526,6 +525,8 @@ svg {
 
 
 /**BLOG CSS*/
+
+
 
 
 .blog-post {
