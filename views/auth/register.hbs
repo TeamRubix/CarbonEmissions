@@ -1,42 +1,42 @@
-<div class="register-container mt-5">
-        <h1 class="text-center">Register User</h1>
-        <form method="post" id="registerForm">
-                <div class="item" id="item-1">
-                        {{!-- <label for="username" class="form-label">Username: </label> --}}
-                        <input class="form-control text-center m-auto w-75" name="username" id="username" required
-                                type="email" placeholder="Enter Your Email" />
-                </div>
-                <div class="item" id="item-2">
-                        {{!-- <label for="password" class="col-2 form-label">Password: </label> --}}
-                        <input class="form-control text-center m-auto w-75" name="password" id="password"
-                                type="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                placeholder="Enter Password" />
-                </div>
-                <div class="item" id="item-3">
-                        {{!-- <label for="confirm" class="col-2 form-label">Confirm: </label> --}}
-                        <input class="form-control text-center m-auto w-75" name="confirm" id="confirm" type="password"
-                                required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm Password" />
-                </div>
-                <div class="item" id="item-4">
-                        {{!-- <label for="userRole" class="col-2 form-label">User Role: </label> --}}
-                        <select class="form-control  text-center m-auto w-50" name="userRole" id="userRole">
-                                <option value="">Select A User Role</option>
-                                <option value="Student">Student</option>
-                                <option value="Educator">Educator</option>
-                                <option value="HTRFaculty">HTR Faculty</option>
-                                <option value="CommunityMember">Community Member</option>
-                        </select>
+<h1>Register</h1>
+<form method="post">
+        <fieldset>
+                <label for="username" >Username: *</label>
+                <input name="username" id="username" required type="email" placeholder="email@email.com" />
+        </fieldset>
+        <fieldset>
+                <label for="password" >Password: *</label>
+                <input name="password" id="password" type="password" required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                {{!-- <img src="/images/show.png" alt="Show/Hide" id="imgShowHide" onclick="showHide()" /> --}}
+        </fieldset>
+        <fieldset>
+                <label for="confirm" >Confirm: *</label>
+                <input name="confirm" id="confirm" type="password" required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="return comparePasswords()" />
+                <span id="pwMsg"></span>
+        </fieldset>
+        <fieldset>
+                <button class="btn-style-two" onclick="return comparePasswords()">Register</button>
+
+                <div class="SignIn">
+                        <div>
+                                <a href="/auth/google">
+                                        <img src="/images/google-icon.svg" alt="google-logo" />
+                                        <span>Sign In</span>
+                                </a>
+                        </div>
+
+                        <div>
+                                <a href="/auth/facebook">
+                                        <img src="/images/facebook-icon.svg" alt="facebook-logo" />
+                                        <span>Sign In</span>
+                                </a>
+                        </div>
                 </div>
 
-                <div class="item" id="item-6">
-                        <button class="btn-style" type="submit">Register</button>
-                        <a href="/auth/google">
-                                <img class="google" src="/images/google.png" alt="Sign in with Google" /></a>
-
-                </div>
-        </form>
-        <hr>
-        <div class="">
-                <p class="h5 m-4 mt-3">Already have an account? <a href="/auth/login" title="Login">Login</a></p>
-        </div>
-</div>
+                <hr />
+                Already have an account?
+                <a href="/auth/login" title="Login">Login</a>
+        </fieldset>
+</form>
