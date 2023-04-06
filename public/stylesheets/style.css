@@ -407,7 +407,7 @@ section {
   z-index: 0;
   border: 44px solid #0575E6;
 } */
-} */
+
 
 .about-section .image-column .image-1 {
   position: relative;
@@ -939,11 +939,11 @@ footer {
   background: linear-gradient(90deg, #0575e6, #021b79) !important;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   footer .container {
     max-width: 960px;
   }
-}
+} */
 
 
 
