@@ -106,12 +106,16 @@ input {
       #f5af19);
 }
 
+div.button{
+  /* margin-right: 180px; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
 
 
-
-option,
-select {
+option,select{
   border: none;
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
   border-radius: 2rem;
@@ -392,6 +396,7 @@ section {
 }
 
 /* .about-section .image-column .inner-column:before {
+/* .about-section .image-column .inner-column:before {
   content: '';
   position: absolute;
   width: calc(50% + 80px);
@@ -401,6 +406,7 @@ section {
   background: transparent;
   z-index: 0;
   border: 44px solid #0575E6;
+} */
 } */
 
 .about-section .image-column .image-1 {
@@ -444,82 +450,211 @@ section {
   -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
+
+
+/* About Us Page CSS*/
+
+.below-fold .card {
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.below-fold .card-img-top {
+  width: 20%;
+  height: auto;
+  align-self: center
+}
+
+.below-fold .card-body {
+  text-align: center
+}
+
+.below-fold .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(40deg, #f12711, #f5af19);
+  /* Change the background color */
+  transition-delay: 0.3s;
+}
+
+.below-fold .card:hover h5,
+.below-fold .card:hover p {
+  color: white;
+  /* Change the text color */
+}
+
+.team-section .body {
+  background: linear-gradient(90deg, #145889 0%, #AB47BC 100%)
+}
+
+.team-section .container {
+  background-color: white;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+  margin-bottom: 50px
+}
+
+.team-section .title {
+  font-size: 25px;
+  font-weight: 100
+}
+
+.team-section .icon {
+  position: relative;
+  bottom: 11px
+}
+
+.team-section .mt-100 {
+  margin-top: 100px
+}
+
+.team-section .profile img {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%
+}
+
+.team-section .card {
+  border-radius: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+}
+
+.team-section .card-body {
+  position: relative;
+  bottom: 35px
+}
+
+.team-section .btn {
+  margin-top: 36px;
+  margin-bottom: 45px;
+  background-color: #AB47BC;
+  border: none;
+  color: #fff
+}
+
+.team-section .btn:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  color: #fff
+}
+
+.team-section .header {
+  padding-top: 40px
+}
+/****************************/
+
+
+
 /* HOME CANADA MAPS CSS */
-.custommargin{
+.custommargin {
   margin-top: 50px;
 }
+
 #canadaMap {
   width: 60vw;
   margin: 0 auto;
   display: block;
-  padding-top:10vh;
+  padding-top: 10vh;
 }
+
 svg {
- fill: lightgrey;
+  fill: lightgrey;
 }
-#NFL_L{
-  fill:Indigo;
-  color:Indigo;
+
+#NFL_L {
+  fill: Indigo;
+  color: Indigo;
 }
-#BC{
+
+#BC {
   fill: Salmon;
   color: Salmon;
 }
-#Nova_Scotia{
+
+#Nova_Scotia {
   fill: sandybrown;
   color: sandybrown;
 }
-#Quebec{
-  fill:lightcoral;
-  color:lightcoral;
+
+#Quebec {
+  fill: lightcoral;
+  color: lightcoral;
 }
-#Ontario{
-  fill:lightseagreen;
-  color:lightseagreen;
+
+#Ontario {
+  fill: lightseagreen;
+  color: lightseagreen;
 }
-#Yukon{
+
+#Yukon {
   fill: #DC143C;
   color: #DC143C;
 }
-#NWT{
-  fill:orange;
-  color:orange;
+
+#NWT {
+  fill: orange;
+  color: orange;
 }
-#Nunavut{
-  fill:yellow;
-  color:yellow;
+
+#Nunavut {
+  fill: yellow;
+  color: yellow;
 }
-#PEI{
-  fill:#800000;
-  color:#800000;
+
+#PEI {
+  fill: #800000;
+  color: #800000;
 }
-#New_Brunswick{
-  fill:#AFEEEE;
-  color:#AFEEEE;
+
+#New_Brunswick {
+  fill: #AFEEEE;
+  color: #AFEEEE;
 }
-#Manitoba{
-  fill:#7CFC00;
-  color:#7CFC00;
+
+#Manitoba {
+  fill: #7CFC00;
+  color: #7CFC00;
 }
-#Sask{
+
+#Sask {
   fill: turquoise;
   color: turquoise;
 }
-#Alberta{
+
+#Alberta {
   fill: #9932CC;
   color: #9932CC;
 }
-#svg2:hover{ 
- fill:#f5af19;
- cursor: pointer;
+
+#svg2:hover {
+  fill: #f5af19;
+  cursor: pointer;
 }
-.province_text{
- font-size:11px;
- fill:black;}
-.st2{fill:none;}
-.st3{font-family:'MyriadPro-Regular';}
-.st5{fill:#FFFFFF;}
-.st6{fill:black;}
+
+.province_text {
+  font-size: 11px;
+  fill: black;
+}
+
+.st2 {
+  fill: none;
+}
+
+.st3 {
+  font-family: 'MyriadPro-Regular';
+}
+
+.st5 {
+  fill: #FFFFFF;
+}
+
+.st6 {
+  fill: black;
+}
 
 
 
@@ -642,11 +777,12 @@ svg {
 /* #regTitle{
   color: white;
   padding: 2px;
-  margin: 0;  
+  margin: 0;
   background-image: linear-gradient(40deg, #3af300, #1b7300);
 }
 
-#registerForm input, #loginForm input {
+#registerForm input,
+#loginForm input {
   border: 0px;
   border-radius: 0px;
   border-bottom: 1px solid #d0d0d0;
@@ -660,6 +796,153 @@ svg {
 thead {
   color: white;
   background-image: linear-gradient(40deg, #f12711, #f5af19);
+}
+
+
+
+div.register-container {
+  
+  padding: 1rem;
+
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  min-height: 380px;
+  height: auto;
+  width: 400px;
+
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* padding-bottom: 10px; */
+}
+
+div.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+div.item input {
+  font-family: "Quicksand", sans-serif;
+  width: 250px !important;
+  align-items: center;
+
+  border: none;
+  border-radius: 16px;
+  padding: 4px 6px;
+
+}
+
+#item-6{
+  display: flex;
+  height: 140px;
+  flex-direction: column;
+}
+#item-6 a{
+  display: inline-block;
+}
+
+
+div.item select {
+  font-family: "Quicksand", sans-serif;
+  border: none;
+  border-radius: 16px;
+  padding: 5px;
+  width: 180px !important;
+  /* display: inline-block; */
+}
+
+
+
+
+.btn-style {
+  border-radius: 2rem;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
+  padding: 5px 10px;
+  /* margin-top: 5px; */
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #FFC107;
+}
+
+
+
+
+.google {
+  height: 60%;
+  display: block;
+  margin: 5px;
+  display: block;
+  cursor: pointer;
+  /* max-width: 20% !important; */
+  filter: drop-shadow(2px 2px 2px #ccc);
+
+}
+
+
+/* FOOTER CSS*/
+footer ul li {
+  padding-bottom: 10px;
+}
+
+footer ul li i {
+  width: 20px;
+  text-align: center;
+}
+
+footer ul li a {
+  color: #fff;
+}
+
+footer ul li a:hover {
+  color: #f8b500;
+}
+
+footer form .btn {
+  background-image: linear-gradient(40deg, #f12711, #f5af19);
+  color: white;
+  border: linear-gradient(40deg, #f12711, #f5af19);
+}
+
+footer form .btn:hover {
+  background-color: #e5a300;
+  border-color: #e5a300;
+}
+
+footer p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0;
+}
+
+footer a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f8b500;
+}
+
+footer .navbar-brand img {
+  max-height: 60px;
+}
+
+footer {
+  background: linear-gradient(90deg, #0575e6, #021b79) !important;
+}
+
+@media (min-width: 768px) {
+  footer .container {
+    max-width: 960px;
+  }
 }
 
 
