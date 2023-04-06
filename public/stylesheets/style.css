@@ -77,6 +77,10 @@ li {
   color: #fff;
 }
 
+.text-dark{
+  color: #000000 !important;
+}
+
 .box {
   min-height: 100vh;
 }

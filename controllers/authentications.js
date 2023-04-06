@@ -2,9 +2,12 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user');
+const user = require('../models/user');
 
 router.get('/register', (req, res) => {
-    res.render('auth/register', { title: 'Register', user: req.user });
+    let userRole = req.session.userRole?.userRole;
+    req.session.userRole = [];
+    res.render('auth/register', { title: 'Register', userRole: userRole, user: req.user });
 })
 
 
@@ -13,13 +16,16 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
     User.register(new User({
         username: req.body.username,
-        userRole: req.body.userRole
+        // userRole: req.session.userRole
     }),req.body.password,(err,user)=>{
         if(err){
+            
             console.log(err)
         }
         else{
-
+            req.session.userRole = req.body.userRole;
+            console.log(req.session.userRole);
+            // console.log(userRole);
             res.redirect('/');
 
         }
@@ -28,34 +34,41 @@ router.post('/register', (req, res) => {
 
 
 router.get('/login', (req, res) => {
-    res.render('auth/login', { title: 'Login', user: req.user });
+    let userRole = req.session.userRole;
+    // console.log(req.session.userRole);
+    // req.session.userRole = [];
+    res.render('auth/login', { title: 'Login', userRole: userRole, user: req.user });
 })
 
 // post method for user login
-router.post('/login', 
-//(res, req) => {
-//    console.log(User.find(User.userRole));
-    // User.find((err, user) =>{
-        // if(err){
-            
-        //     console.log(err);
-        //     console.log("user not found");
-        // }
-        // else{
-        //     console.log("user found");
-        //     // console.log(User.userRole);
-            
-            // if(req.body.userRole == 'Educator'){
-                // console.log(req.user.userRole);
-                
-                 passport.authenticate('local', {
-                    successRedirect: '/dashboard',
-                    failureRedirect: '/auth/login'
-                })
-            // }
-        // }
-    // })
-);
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/auth/setRoles',
+    failureRedirect: '/auth/login'
+}));
+
+router.get('/setRoles', (req, res) => {
+    req.session.userRole = req.user.userRole;
+    // console.log(req.session.userRole);
+    
+    if(req.session.userRole == 'Student')
+    {
+        console.log("This is a Student");
+        res.redirect('/dashboard/');
+    }
+    else if(req.session.userRole == 'Educator')
+    {
+        console.log("This is a Educator");
+        res.redirect('/dashboard/create');
+    }
+    else if(req.session.userRole == 'HTRFaculty')
+    {
+        console.log("This is a HTR Faculty");
+    }
+    else if(req.session.userRole == 'CommunityMember')
+    {
+        console.log("This is a Community Member");
+    }
+});
 
 
 router.get('/logout', (req, res) => {
@@ -63,6 +76,7 @@ router.get('/logout', (req, res) => {
         if (err) {
             console.log(err);
         }
+        req.session.userRole = [];
         res.redirect('/');
     });
 });
