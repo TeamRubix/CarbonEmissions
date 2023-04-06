@@ -58,7 +58,8 @@
 
       </ul>
       <ul class="navbar-nav ms-auto">
-        {{#unless user}}
+        {{#if user}}
+        
         <li class="nav-item">
           <a class="nav-link user-banner text-dark" href="#">
             Welcome
@@ -67,21 +68,16 @@
         </li>
 
         <li class="nav-item">
+          <a class="nav-link" href="/auth/logout">Logout</a>
+        </li>
+
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/register">Register</a>
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link" href="/auth/login">login</a>
-        </li>
-        {{/unless}}
-
-        {{#if user}}
-
-        <li class="nav-item">
-          <a class="nav-link" href="/auth/logout">logout</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link user-banner" href="#">
-            Hi!
-            {{user.username}}
-          </a>
         </li>
 
         {{/if}}
@@ -94,7 +90,17 @@
 <body>
   <main class="box">
     {{{body}}}
-  </div>
+  </main>
+
+  <footer>
+    <div class="navbar bg-body-tertiary navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-text">
+          &copy; 2021-2023 GreenGuage
+        </span>
+      </div>
+    </div>
+  </footer>
 
   <footer class="bg-dark text-light py-5">
     <div class="container">
