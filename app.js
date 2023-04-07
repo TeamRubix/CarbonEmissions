@@ -3,9 +3,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const csvtojson = require('csvtojson');
-const multer = require('multer');
-
 
 
 //Add Controllers Here
@@ -64,7 +61,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const User = require('./models/user');
-const foodEmission = require('./models/foodEmission');
 passport.use(User.createStrategy())
 
 passport.serializeUser(User.serializeUser())
@@ -85,57 +81,6 @@ passport.use(new googleStrategy({
     return done (err, user);
   })
 }));
-
-/*****************************FILE UPLOAD STARTS HERE************************** */
-
-// we are using Multer storage to handle the file uploads. This storage will be used to access the uploaded file.
-const excelStorage = multer.diskStorage({  
-  destination:(req,file,cb)=>{  
-       cb(null,'./public/excelUploads');      // file added to the public folder of the root directory
-  },  
-  filename:(req,file,cb)=>{  
-       cb(null,file.originalname);  
-  }  
-});  
-const excelUploads = multer({storage:excelStorage}); 
-app.get('/',(req,res) => {
-     res.render('dashboard/index');
-})
-// upload excel file and import in mongodb
-app.post('dashboard/index', excelUploads.single("csv"), (req, res) =>{  
-     importFile('./public' + '/excelUploads/' + req.file.filename);
-          function importFile(filePath){
-            //  Read Excel File to Json Data
-              const arrayToInsert = [];
-              csvtojson().fromFile(filePath).then(source => {
-            // Fetching the all data from each row
-              for (var i = 0; i < source.length; i++) {
-                  console.log(source[i]["name"])
-                  const singleRow = {
-                      foodName: source[i]["Food"],
-                      originPoint: source[i]["Point of Origin"],
-                      transportDistance: source[i]["Transport Distance (km)"],
-                      weight: source[i]["Weight (kg)"],
-                      unitsTotal: source[i]["Units"],
-                      valueTTW: source[i]["Emission Values kg (CO2e TTW)"],
-                      valueWTW: source[i]["Emission Values kg (CO2e WTW)"],
-                      valuePerkg: source[i]["CO2e per kg"],
-                     
-                  };
-                  arrayToInsert.push(singleRow);
-              }
-           //inserting into the table student
-           foodEmission.insertMany(arrayToInsert, (err, result) => {
-                  if (err) console.log(err);
-                      if(result){
-                          console.log("File imported successfully.");
-                          res.redirect('/')
-                      }
-                  });
-              });
-         }
-})
-/**********************ENDS******************************************** */
 
 //passport config ends
 
