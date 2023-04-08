@@ -1,0 +1,143 @@
+<div class="container">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h1 mb-0 text-gray-800">Dashboard</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Download Report</a>
+    </div>
+
+    <!-- 4 box   dashboard components-->
+    <div class="row">
+        {{#if emission}}
+        <!-- Transpirt emissions -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Transporation Emissions</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">452 Kg/CO2e</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-truck-arrow-right fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Food Emissions -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Food Emissions</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-wheat-awn-circle-exclamation fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog Post -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Pending Requests</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Total Records -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Total Records</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"> {{totalCount }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-database fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+    <!--  FILE UPLOAD AND DATA ENTRY -->
+    <div class="row">
+        {{! add data buttons }}
+        <div class="col-3">
+            <h4 class="h4 mb-0 text-gray-800 mt-4">Add Data</h4>
+            <a href="/dashboard/create" class="btn btn-dark m-2 px-5">Add Food Emission Data</a>
+            <h5 class="text-center">-OR-</h5>
+            <h4 class="h4 mb-0 text-gray-800 mt-4">Upload CSV File</h4>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div>
+                    <input type="file" name="csv" id="csv" class="form-control p-2 mt-2" />
+                </div>
+                <br />
+                <button class="btn btn-dark" type="submit">Upload</button>
+            </form>
+        </div>
+        {{! data table }}
+        {{#if emission}}
+        <table class="table w-100 m-auto mt-5">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col">Food</th>
+                    <th scope="col">Point of Origin</th>
+                    <th scope="col">Transport Distance (km)</th>
+                    <th scope="col">Weight (kg)</th>
+                    <th scope="col">Units</th>
+                    <th scope="col">Emission Values kg (CO2e TTW)</th>
+                    <th scope="col">Emission Values kg (CO2e WTW)</th>
+                    <th scope="col">CO2e per kg</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {{#each emission}}
+                <tr class="m-auto text-center">
+                    <td>{{this.foodName}}</td>
+                    <td>{{this.originPoint}}</td>
+                    <td>{{this.transportDistance}}</td>
+                    <td>{{this.weight}}</td>
+                    <td>{{this.unitsTotal}}</td>
+                    <td>{{this.valueTTW}}</td>
+                    <td>{{this.valueWTW}}</td>
+                    <td>{{this.valuePerkg}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{/if}}
+    </div>
+    <!--  Data Table -->
+    {{#each countries}}
+    <div>
+        <h2>{{this.countryName}}</h2>
+        <p>Total CO2e emissions: {{this.total}}</p>
+    </div>
+    {{/each}}
+
+
+    {{! GLOBAL MAP }}
+    {{! Thanks to Mohamed El-Mdary for svg map with cool tooltips https://codepen.io/mohamed9714/pen/YYWZrR }}
+    <div class="row mt-4">
+    </div>
+</div>

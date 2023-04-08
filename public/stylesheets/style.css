@@ -569,12 +569,6 @@ svg {
   fill: #9932cc;
   color: #9932cc;
 }
-
-#svg2:hover {
-  fill: #f5af19;
-  cursor: pointer;
-}
-
 .province_text {
   font-size: 11px;
   fill: black;
@@ -595,10 +589,10 @@ svg {
 .st6 {
   fill: black;
 }
-path{
+#worldMap path{
 	transition: fill .1s linear
 }
-path:hover{
+#worldMap path:hover{
 	fill: #565656
 }
 
