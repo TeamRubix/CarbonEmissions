@@ -3,7 +3,25 @@ const router=express.Router();
 const FoodEmission = require('../models/foodEmission');
 
 const global = require('../controllers/globalFunctions');
+// Climatiq API - alisha
+const axios = require('axios');
 
+router.get('/emissions', async (req, res) => {
+  try {
+    const response = await axios.get('https://www.climatiq.io/data', {
+      params: {
+        sector: 'Waste'
+      }
+    });
+    const emissionsData = response.data;
+    res.render('dashboard/emissions', { emissionsData });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error retrieving emissions data');
+  }
+});
+
+// Ends here
 
 router.get('/', (req,res)=>{
     FoodEmission.find((err,emission) => {

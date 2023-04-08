@@ -595,6 +595,12 @@ svg {
 .st6 {
   fill: black;
 }
+path{
+	transition: fill .1s linear
+}
+path:hover{
+	fill: #565656
+}
 
 /**BLOG CSS*/
 
@@ -906,4 +912,3 @@ div.item select {
   width: 180px !important;
   /* display: inline-block; */
 }
-

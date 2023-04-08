@@ -27,28 +27,28 @@ function calcCO2() {
 }
 //Canada map
 
-var canada = document.getElementsByTagName("path");
-for (var i = 0; i < canada.length; i++) {
-	var country = canada[i];
-	country.setAttribute("data-toggle", "tooltip");
-	country.setAttribute("data-placement", "top");
-	country.setAttribute("title", country.getAttribute("id"));
-}
+// var canada = document.getElementsByTagName("path");
+// for (var i = 0; i < canada.length; i++) {
+// 	var country = canada[i];
+// 	country.setAttribute("data-toggle", "tooltip");
+// 	country.setAttribute("data-placement", "top");
+// 	country.setAttribute("title", country.getAttribute("id"));
+// }
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
 
 
 // Global Map
 var world = document.getElementsByTagName("path");
 for (var i = 0; i < world.length; i++) {
 	var country = world[i];
-	country.setAttribute("data-toggle", "tooltip");
-	country.setAttribute("data-placement", "top");
+	country.setAttribute("data-bs-toggle", "tooltip");
+	country.setAttribute("data-bs-placement", "top");
 	country.setAttribute("title", country.getAttribute("id"));
 }
 
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-bs-toggle="tooltip"]').tooltip()
 })
