@@ -1,5 +1,6 @@
-<h1>Register</h1>
-<form method="post">
+<div class="register-container mt-5">
+        <h1 class="text-center">Login</h1>
+        <form method="post" class="p-4" id="loginForm">
         <fieldset>
                 <label for="username" >Username: *</label>
                 <input name="username" id="username" required type="email" placeholder="email@email.com" />
@@ -17,7 +18,7 @@
                 <span id="pwMsg"></span>
         </fieldset>
         <fieldset>
-                <button class="btn-style-two" onclick="return comparePasswords()">Register</button>
+                <button class="btn-style" onclick="return comparePasswords()">Register</button>
 
                 <div class="SignIn">
                         <div>

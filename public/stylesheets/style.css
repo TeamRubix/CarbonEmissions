@@ -768,7 +768,31 @@ div.item select {
   width: 180px !important;
   /* display: inline-block; */
 }
+.btn-style {
+  border-radius: 2rem;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
+  padding: 5px 10px;
+  /* margin-top: 5px; */
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  background-image: linear-gradient(1800deg, #f12711, #f5af19);
+}
 
+
+
+
+.google {
+  height: 60%;
+  display: block;
+  margin: 5px;
+  display: block;
+  cursor: pointer;
+  /* max-width: 20% !important; */
+  filter: drop-shadow(2px 2px 2px #ccc);
+
+}
 /* register page styles */
 
 div.SignIn div {
