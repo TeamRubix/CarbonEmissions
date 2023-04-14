@@ -13,7 +13,7 @@ h4,
 h5,
 th {
   font-family: "Raleway", sans-serif !important;
-  font-weight: 900;
+  font-weight: 900 !important;
 }
 
 p,
@@ -168,7 +168,7 @@ img#about {
 }
 
 section {
-  padding: 60px 0;
+  /* padding: 60px 0; */
 }
 
 .sec-title {
@@ -264,6 +264,7 @@ section {
   outline: none;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: none;
 }
 
 .btn-style-two {
@@ -279,6 +280,7 @@ section {
   outline: none;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: none;
 }
 
 /* Homepage About section */
@@ -451,7 +453,7 @@ section {
   background-color: white;
   text-align: center;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); */
   margin-bottom: 50px;
 }
 
@@ -924,4 +926,19 @@ div.item select {
   padding: 5px;
   width: 180px !important;
   /* display: inline-block; */
+}
+
+
+/* dashboard file upload */
+
+div.add-data{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+
+div.add-data>div{
+  width: 300px;
+  margin: 2rem;
 }
