@@ -7,8 +7,7 @@
 				environmental impact of the foods you eat. By making informed choices about what we consume, we can all
 				play a part in reducing our carbon footprint and protecting the planet for future generations.</p>
 			<div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-				<a href="/about"><button type="button" href="/about"
-						class="btn-style-one">Explore</button></a>
+				<a href="/about"><button type="button" href="/about" class="btn-style-one">Explore</button></a>
 				<a href="/auth/login"><button type="button" class="btn-style-two">Join
 						Us</button></a>
 			</div>
@@ -19,31 +18,60 @@
 	</div>
 </div>
 <!--BELOW THE FOLD-->
-<div class="container my-5 pb-5 mb-3">
-    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-        <h1 class="display-4 fw-bold lh-1">What's your Carbon Footprint?</h1>
-        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <p class="lead">What is your car's MPG?</p>
-            <input id='mpg' class='p-2 mb-3' type='number' placeholder='Insert MPG' />
-            <p class="lead">What is the total commute distance?</p>
-            <input id='dist' class='p-2 mb-3' type='number' placeholder='Insert Distance' />
-            <p class="lead">How often is this trip per week?</p>
-            <input id='trips' class='p-2 mb-3' type='number' placeholder='Insert Trips' />
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-                <button type="button" class="btn-style-two" onclick='calcCO2()'>Calculate Carbon
-                    Footprint</button>
-            </div>
-        </div>
-        <div class="col-lg-4 text-center mb-4" id="calcBar">
-            <h5 class="card-title">Your Carbon Footprint is:</h5>
-            <h6 class="card-subtitle mb-2"> <span id='result4'> </span>g CO2e / mile</h6>
-            <h5 class="card-text">Your Carbon Footprint for</h5>
-            <h6>Trip : <span id='result'></span>kg CO2e</h6>
-            <h6>Week : <span id='result2'></span>kg CO2e</h6>
-            <h6>Year : <span id='result3'></span>kg CO2e</h6>
-        </div>
-    </div>
+<div class="container my-5 pb-5 mb-3 calculator">
+	<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+		<h1 class="display-4 fw-bold lh-1">What's your Carbon Footprint?</h1>
+		<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+			<p class="lead">What is your car's MPG?</p>
+			<input id='mpg' class='p-2 mb-3' type='number' placeholder='Insert MPG' />
+			<p class="lead">What is the total commute distance?</p>
+			<input id='dist' class='p-2 mb-3' type='number' placeholder='Insert Distance' />
+			<p class="lead">How often is this trip per week?</p>
+			<input id='trips' class='p-2 mb-3' type='number' placeholder='Insert Trips' />
+			<div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+				<button type="button" class="btn-style-two" onclick='calcCO2()'>Calculate Carbon
+					Footprint</button>
+			</div>
+		</div>
+		<div class="col-lg-4 text-center mb-4 calcBar" id="calcBar">
+			<h4 class="display-6 fw-bold">Your Carbon Footprint</h4>
+					<p class="lead p-2 customth">Trip =  <span id='result'></span>kg CO2e</p>
+					<p class="lead p-2 customth">Week =  <span id='result2'></span>kg CO2e</p>
+					<p class="lead p-2 customth">Year =  <span id='result3'></span>kg CO2e</p>
+		</div>
+	</div>
 </div>
+<!-- Script for Calculator-->
+<script>
+	var res = document.getElementById('result');
+	var res2 = document.getElementById("result2");
+	var res3 = document.getElementById("result3");
+	var res4 = document.getElementById("result4");
+	var mpg = document.getElementById('mpg');
+	var dist = document.getElementById('dist');
+	var trip = document.getElementById('trips');
+	function calcCO2() {
+		var custom = document.getElementById('calcBar');
+  custom.className += 'calc';
+
+		var x = mpg.value;
+		var y = dist.value;
+		var z = trips.value;
+		var calc4 = (8.8 / x) * 1000;
+		var calc = (calc4 * y) / 1000;
+		var calc2 = (calc * z);
+		var calc3 = (calc2 * 52);
+		calc = calc.toFixed(2);
+		calc2 = calc2.toFixed(2);
+		calc3 = calc3.toFixed(2);
+		calc4 = calc4.toFixed(1);
+		console.log('calc is: ' + calc);
+		res.innerHTML = calc;
+		res2.innerHTML = calc2;
+		res3.innerHTML = calc3;
+		res4.innerHTML = calc4;
+	}
+</script>
 
 
 <section class="about-section">
@@ -88,18 +116,25 @@
 		<div class="col-3 mt-4 pt-4">
 			<h1 class="display-1"> Emissions within Canada</h1>
 			<ul class="list-group list-group-flush border custommargin">
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="NFL_L" ></i>  Newfoundland & Labrador - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="BC" ></i>  British Colombia - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nova_Scotia" ></i>  Nova Scotia - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Quebec" ></i> Quebec - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Ontario" ></i> Ontario - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Yukon" ></i> Yukon - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="NWT" ></i>  North West Territories - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nunavut" ></i>  Nunavut - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="PEI" ></i> Prince Edward Island - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="New_Brunswick" ></i>  New Brunswick - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Manitoba" ></i>  Manitoba - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Sask" ></i> Saskatchewan - </li>
+				{{!-- <i class="fa-solid fa-square fa-lg" id="${provinceId}"></i> ${provinceName} - ${emissions} kg
+				CO2eq/year --}}
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="NFL_L"></i> Newfoundland & Labrador
+					- </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="BC"></i> British Colombia - </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nova_Scotia"></i> Nova Scotia -
+				</li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Quebec"></i> Quebec - </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Ontario"></i> Ontario - </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Yukon"></i> Yukon - </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="NWT"></i> North West Territories -
+				</li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nunavut"></i> Nunavut - </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="PEI"></i> Prince Edward Island -
+				</li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="New_Brunswick"></i> New Brunswick -
+				</li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Manitoba"></i> Manitoba - </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Sask"></i> Saskatchewan - </li>
 			</ul>
 		</div>
 		<div class="col-6">
@@ -130,7 +165,7 @@
 					<rect x="582.1" y="399.6" class="st2" width="87" height="30.4" />
 					<text transform="matrix(1 0 0 1 582.1451 408.1656)">
 						<tspan x="0" y="0" class="province_text">Newfoundland And Labrador</tspan>
-						</text>
+					</text>
 					<rect class="st6" x="616.4" y="427.2" width="3.7" height="35.8" />
 					<circle class="st5" cx="618.3" cy="462.9" r="7.1" />
 				</g>
