@@ -31,4 +31,15 @@
     <fieldset class="m-4 m-auto text-center">
         <button class=" btn btn-lg btn-primary m-3">Add Data</button>
     </fieldset>
+    <div class="m-auto text-center">
+    <h1>Upload CSV File</h1>
+    <form action="/dashboard/index" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="csv">Choose CSV File:</label>
+            <input type="file" name="csv" id="csv">
+        </div>
+        <br>
+        <button type="submit">Upload</button>
+     </form>
+</div>
 </form>
