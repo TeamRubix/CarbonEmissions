@@ -1,48 +1,32 @@
 <html>
 
-  <head>
-    <title>{{title}}</title>
+<head>
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 
-    <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
+  <script src="/javascripts/jquery.min.js"></script>
 
-    <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/scripts.js"></script>
 
-    <script src="/javascripts/scripts.js"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
-  </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+</head>
+<header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">GreenGuage</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -54,63 +38,49 @@
             <a class="nav-link" href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link"
-              aria-current="page"
-              href="/dashboard/"
-            >Dashboard</a>
+            <a class="nav-link" aria-current="page" href="/dashboard/">Dashboard</a>
           </li>
 
           {{#if user}}
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Blogs
-              </a>
-              <ul class="dropdown-menu">
-                <a class="nav-link" href="/blog/index">Show Blogs</a>
-                <a class="nav-link" href="/blog/create">Create Blogs</a>
-              </ul>
-            </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Blogs
+            </a>
+            <ul class="dropdown-menu">
+              <a class="nav-link" href="/blog/index">Show Blogs</a>
+              <a class="nav-link" href="/blog/create">Create Blogs</a>
+            </ul>
+          </li>
 
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="/dashboard/create"
-              >Emission Data</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/dashboard/create">Emission Data</a>
+          </li>
           {{/if}}
 
         </ul>
         <ul class="navbar-nav ms-auto">
           {{#unless user}}
-            <li class="nav-item">
-              <a class="nav-link" href="/auth/register">Register</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/register">Register</a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="/auth/login">login</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/login">login</a>
+          </li>
           {{/unless}}
 
           {{#if user}}
 
-            <li class="nav-item">
-              <a class="nav-link" href="/auth/logout">logout</a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/logout">logout</a>
+          </li>
 
-            <li class="nav-item">
-              <a class="nav-link user-banner" href="#">
-                Hi!
-                {{user.username}}
-              </a>
-            </li>
+          <li class="nav-item">
+            <a class="nav-link user-banner" href="#">
+              Hi!
+              {{user.username}}
+            </a>
+          </li>
 
           {{/if}}
         </ul>
@@ -118,60 +88,56 @@
       </div>
     </div>
   </nav>
+</header>
 
-  <body>
-    <div class="box">
-      {{{body}}}
+
+<body>
+  <div class="box">
+    {{{body}}}
+  </div>
+
+  <footer class="bg-dark text-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <h3 class="text-capitalize mb-3">Navigation</h3>
+          <ul class="list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/blog/create">Blogs</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <h3 class="text-capitalize mb-3">Contact Us</h3>
+          <ul class="list-unstyled">
+            <li><i class="bi bi-envelope me-2"></i>company@example.com</li>
+            <li><i class="bi bi-geo-alt me-2"></i>123 Main St, Barrie,CA, L4N
+              1S6</li>
+            <li><i class="bi bi-telephone me-2"></i>(12x) 4xx-78xx</li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <h3 class="text-capitalize mb-3">Follow Us</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://www.facebook.com/example"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
+            <li><a href="https://www.twitter.com/example"><i class="bi bi-twitter me-2"></i>Twitter</a></li>
+            <li><a href="https://www.instagram.com/example"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <footer class="bg-dark text-light py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-3">Navigation</h5>
-            <ul class="list-unstyled">
-              <li><a href="/">Home</a></li>
-              <li><a href="/dashboard">Dashboard</a></li>
-              <li><a href="/blog/create">Blogs</a></li>
-              <li><a href="/about">About</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-3">Contact Us</h5>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-envelope me-2"></i>company@example.com</li>
-              <li><i class="bi bi-geo-alt me-2"></i>123 Main St, Barrie,CA, L4N
-                1S6</li>
-              <li><i class="bi bi-telephone me-2"></i>(12x) 4xx-78xx</li>
-            </ul>
-          </div>
-          <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-3">Follow Us</h5>
-            <ul class="list-unstyled">
-              <li><a href="https://www.facebook.com/example"><i
-                    class="bi bi-facebook me-2"
-                  ></i>Facebook</a></li>
-              <li><a href="https://www.twitter.com/example"><i
-                    class="bi bi-twitter me-2"
-                  ></i>Twitter</a></li>
-              <li><a href="https://www.instagram.com/example"><i
-                    class="bi bi-instagram me-2"
-                  ></i>Instagram</a></li>
-            </ul>
-          </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 text-center py-3">
+          <p>Copyright &copy; 2023
+            <a href="#" class="text-reset">Example Company</a>
+            | All rights reserved
+          </p>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 text-center py-3">
-            <p>Copyright &copy; 2023
-              <a href="#" class="text-reset">Example Company</a>
-              | All rights reserved
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
 
 </html>
