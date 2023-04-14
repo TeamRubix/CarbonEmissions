@@ -17,23 +17,28 @@
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="return comparePasswords()" />
                 <span id="pwMsg"></span>
         </fieldset>
-        <fieldset>
+        <fieldset class="mt-3">
+                <select class="form-control text-center m-auto w-50" name="userRole" id="userRole">
+                        <option value="">Select A User Role</option>
+                        <option value="Student">Student</option>
+                        <option value="Educator">Educator</option>
+                        <option value="HTRFaculty">HTR Faculty</option>
+                        <option value="CommunityMember">Community Member</option>
+                </select>
+        </fieldset>
+        <fieldset class="text-center mt-3">
                 <button class="btn-style" onclick="return comparePasswords()">Register</button>
 
-                <div class="SignIn">
-                        <div>
-                                <a href="/auth/google">
+                <div class="SignIn item d-block text-center">
+                                <a href="/auth/google" class="me-4">
                                         <img src="/images/google-icon.svg" alt="google-logo" />
                                         <span>Sign In</span>
                                 </a>
-                        </div>
-
-                        <div>
                                 <a href="/auth/facebook">
                                         <img src="/images/facebook-icon.svg" alt="facebook-logo" />
                                         <span>Sign In</span>
                                 </a>
-                        </div>
+                        
                 </div>
 
                 <hr />

@@ -752,7 +752,7 @@ div.item input {
 
 #item-6 {
   display: flex;
-  height: 140px;
+  margin-top: 10%;
   flex-direction: column;
 }
 
@@ -795,18 +795,14 @@ div.item select {
 }
 /* register page styles */
 
-div.SignIn div {
+div.SignIn {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
-  margin: 1rem;
+  margin: 5%;
 }
 
-div.SignIn div a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+div.SignIn  a {
+  display: inline-block;
 }
 
 div.SignIn div a img {
@@ -918,7 +914,6 @@ div.item input {
 
 #item-6 {
   display: flex;
-  height: 140px;
   flex-direction: column;
 }
 
