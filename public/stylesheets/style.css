@@ -10,10 +10,9 @@ h1,
 h2,
 h3,
 h4,
-h5,
-th {
+h5 {
   font-family: "Raleway", sans-serif !important;
-  font-weight: 900;
+  font-weight: 900 !important;
 }
 
 p,
@@ -56,17 +55,44 @@ li {
 }
 
 .user-banner {
-  display: inline-block;
-  padding: 0.5rem;
+  display: inline-block !important;
+ padding-left: 0.8rem !important;
+ padding-right: 0.8rem !important;
   border-radius: 1rem;
-
   background-image: linear-gradient(40deg, #f12711, #f5af19);
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
   color: #fff;
 }
 
+#userrole {
+  color: #f12711;
+}
+
 .text-dark{
   color: #000000 !important;
+}
+
+/* calculator */
+.calcBar {
+  display: none;
+  min-height: 340px;
+  padding: 34px;
+}
+
+.calc {
+  min-height: 340px;
+  padding: 34px;
+  transition: all 0.75s ease;
+}
+
+.customth {
+  color: #ffffff;
+  background-image: linear-gradient(1800deg, #f12711, #f5af19);
+  padding: 10px 15px;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .box {
@@ -74,7 +100,7 @@ li {
 }
 
 label {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
   min-width: 100px;
   margin: 8px 0;
@@ -152,9 +178,9 @@ img#about {
   height: auto;
 }
 
-section {
-  padding: 60px 0;
-}
+/* section { */
+  /* padding: 60px 0; */
+/* } */
 
 .sec-title {
   position: relative;
@@ -249,6 +275,7 @@ section {
   outline: none;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: none;
 }
 
 .btn-style-two {
@@ -264,6 +291,7 @@ section {
   outline: none;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: none;
 }
 
 /* Homepage About section */
@@ -353,8 +381,6 @@ section {
   font-weight: 400;
 }
 
-
-
 .about-section .image-column .image-1 {
   position: relative;
 }
@@ -436,7 +462,7 @@ section {
   background-color: white;
   text-align: center;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); */
   margin-bottom: 50px;
 }
 
@@ -574,11 +600,6 @@ svg {
   color: #9932cc;
 }
 
-#svg2:hover {
-  fill: #f5af19;
-  cursor: pointer;
-}
-
 .province_text {
   font-size: 11px;
   fill: black;
@@ -598,6 +619,14 @@ svg {
 
 .st6 {
   fill: black;
+}
+
+#worldMap path {
+  transition: fill 0.1s linear;
+}
+
+#worldMap path:hover {
+  fill: #565656;
 }
 
 /**BLOG CSS*/
@@ -708,8 +737,6 @@ svg {
   background-image: linear-gradient(40deg, #f12711, #f5af19);
 }
 
-
-
 thead {
   color: white;
   background-image: linear-gradient(40deg, #f12711, #f5af19);
@@ -748,16 +775,6 @@ div.item input {
   border: none;
   border-radius: 16px;
   padding: 4px 6px;
-}
-
-#item-6 {
-  display: flex;
-  margin-top: 10%;
-  flex-direction: column;
-}
-
-#item-6 a {
-  display: inline-block;
 }
 
 div.item select {
@@ -867,7 +884,7 @@ footer {
   background: linear-gradient(90deg, #0575e6, #021b79) !important;
 }
 
-footer div div.row div{
+footer div div.row div {
   text-align: center;
 }
 
@@ -914,11 +931,18 @@ div.item input {
 
 #item-6 {
   display: flex;
+  padding-top: 1rem;
   flex-direction: column;
 }
 
 #item-6 a {
-  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+#item-6 img {
+  width: 15%;
+  margin-bottom: 4%;
 }
 
 div.item select {
@@ -930,3 +954,80 @@ div.item select {
   /* display: inline-block; */
 }
 
+/* dashboard styles start */
+
+div.add-data {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+div.add-data>div {
+  width: 300px;
+  margin: 2rem;
+}
+
+/* dashboard table  */
+tr{
+  font-family: 'Raleway',sans-serif;
+  font-weight: 700;
+}
+td{
+  font-family: 'Quicksand',sans-serif;
+  font-weight: 500;
+}
+
+table {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  min-width: 130px !important;
+  text-align: left;
+  padding: 8px;
+}
+
+
+div.table{
+  overflow-x: auto;
+}
+
+@media 
+only screen and (max-width: 600px){
+  div.add-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  div.add-data>div {
+    width: 300px;
+    margin: 2rem;
+  }
+
+  form.data-form input.form-input {
+    min-width: 300px !important;
+  }
+}
+
+/* dashbard styles ends */
+
+
+/* form styles */
+
+form.data-form{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.data-form input.form-input {
+  padding: 1rem;
+  min-width: 500px;
+}
