@@ -30,3 +30,7 @@ const emissionSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('FoodEmission', emissionSchema);
+
+
+
+

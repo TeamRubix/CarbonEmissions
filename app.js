@@ -10,7 +10,6 @@ const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
 const authRouter = require('./controllers/authentications');
 const dashboardRouter = require('./controllers/dashboards');
-
 const blogRouter = require('./controllers/blogs');
 
 const app = express();
@@ -24,7 +23,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 //mongoDb connection starts

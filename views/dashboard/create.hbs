@@ -1,45 +1,95 @@
 <div class="text-center p-4">
-    <h1 class="display-4 fw-bold">Food Mile Data Addition</h1>
+  <h1 class="display-4 fw-bold">Food Mile Data Addition</h1>
 </div>
 
-<form method="post" >
-    <fieldset class="m-4">
-        <input class="form-control text-center m-auto w-50" type="text" name="foodName" id="foodName" placeholder="Name of the Food">
-    </fieldset>
-    
-    <fieldset class="m-4">
-        <input class="form-control text-center m-auto w-50" type="text" name="originPoint" id="originPoint" placeholder="Point of Origin">
-    </fieldset>
-    <fieldset class="m-4">
-            <input class="form-control text-center m-auto w-50" type="text" name="transportDistance" id="transportDistance" placeholder="Transport Distance (Kms)">
-    </fieldset>
-    <fieldset class="m-4">
-            <input class="form-control text-center m-auto w-50" type="text" name="weight" id="weight" placeholder="Weight (kg)">
-    </fieldset>
-    <fieldset class="m-4">
-            <input class="form-control text-center m-auto w-50" type="text" name="unitsTotal" id="unitsTotal" placeholder="Total Units">
-    </fieldset>
-    <fieldset class="m-4">
-            <input class="form-control text-center m-auto w-50" type="text" name="valueTTW" id="valueTTW" placeholder="Emission Values kg (CO2e TTW)">
-    </fieldset>
-    <fieldset class="m-4">
-            <input class="form-control text-center m-auto w-50" type="text" name="valueWTW" id="valueWTW" placeholder="Emission Values kg (CO2e WTW)">
-    </fieldset>
-    <fieldset class="m-4">
-            <input class="form-control text-center m-auto w-50" type="text" name="valuePerkg" id="valuePerkg" placeholder="CO2e per kg">
-    </fieldset>
-    <fieldset class="m-4 m-auto text-center">
-        <button class=" btn btn-lg btn-primary m-3">Add Data</button>
-    </fieldset>
-    <div class="m-auto text-center">
-    <h1>Upload CSV File</h1>
-    <form action="/dashboard/index" method="post" enctype="multipart/form-data">
-        <div>
-            <label for="csv">Choose CSV File:</label>
-            <input type="file" name="csv" id="csv">
-        </div>
-        <br>
-        <button type="submit">Upload</button>
-     </form>
-</div>
+<form method="post" class="data-form">
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="foodName"
+      id="foodName"
+      placeholder="Name of the Food"
+    />
+  </div>
+
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="originPoint"
+      id="originPoint"
+      placeholder="Point of Origin"
+    />
+  </div>
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="transportDistance"
+      id="transportDistance"
+      placeholder="Transport Distance (Kms)"
+    />
+  </div>
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="weight"
+      id="weight"
+      placeholder="Weight (kg)"
+    />
+  </div>
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="unitsTotal"
+      id="unitsTotal"
+      placeholder="Total Units"
+    />
+  </div>
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="valueTTW"
+      id="valueTTW"
+      placeholder="Emission Values kg (CO2e TTW)"
+    />
+  </div>
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="valueWTW"
+      id="valueWTW"
+      placeholder="Emission Values kg (CO2e WTW)"
+    />
+  </div>
+  <div class="m-4">
+    <input
+      class="form-input"
+      type="text"
+      name="valuePerkg"
+      id="valuePerkg"
+      placeholder="CO2e per kg"
+    />
+  </div>
+
+  <div class="manual-upload">
+    <button class="btn-style-two">Add Data</button>
+  </div>
+  <div class="csv-upload mt-5">
+    <h2>Upload CSV Data File</h2>
+    <form method="post" enctype="multipart/form-data">
+      <div>
+        <label for="csv">Choose CSV File:</label>
+        <input type="file" name="csv" id="csv" />
+      </div>
+
+      <button class="btn-style-one mt-2" type="submit">Upload</button>
+    </form>
+  </div>
+
 </form>

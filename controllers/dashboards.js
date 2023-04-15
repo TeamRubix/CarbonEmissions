@@ -45,7 +45,7 @@ router.post('/create', global.isAuthenticated,(req,res)=>{
 });
 
 
-/*****************************FILE UPLOAD STARTS HERE************************** */
+
 
 // we are using Multer storage to handle the file uploads. This storage will be used to access the uploaded file.
 const fs = require('fs');
