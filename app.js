@@ -10,6 +10,7 @@ const usersRouter = require('./controllers/users');
 const authRouter = require('./controllers/authentications');
 const dashboardRouter = require('./controllers/dashboards');
 const blogRouter = require('./controllers/blogs');
+const chartRouter=require('./controllers/charts')
 
 const app = express();
 
@@ -87,6 +88,7 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/blog', blogRouter);
+app.use('/chart', chartRouter)
 
 
 // catch 404 and forward to error handler
