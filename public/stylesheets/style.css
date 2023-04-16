@@ -72,7 +72,7 @@ li {
   color: #000000 !important;
 }
 
-/* calculator */
+/* ALISHA calculator */
 .calcBar {
   display: none;
   min-height: 340px;
@@ -261,7 +261,23 @@ img#about {
 .list-style-one li a:hover {
   color: #44bce2;
 }
-
+.btn-style-upload {
+  /* position: relative; */
+  /* display: inline-block; */
+  /* font-size: 20px; */
+  color: #ffffff;
+  /* padding: 10px 15px; */
+  /* font-weight: 600; */
+  /* overflow: hidden; */
+  background-image: linear-gradient(180deg, #0575e6, #021b79);
+  /* border-radius: 1rem; */
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.chart-box{
+  min-height: 500px;
+}
 .btn-style-one {
   position: relative;
   display: inline-block;
@@ -306,6 +322,7 @@ img#about {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-decoration: none;
 }
+/* DASHBOARD ALISHA */
 
 /* Homepage About section */
 .about-section {
@@ -966,7 +983,7 @@ div.item select {
   width: 180px !important;
   /* display: inline-block; */
 }
-/* ABOUT PAGE TEAMS */
+/* ALISHA ABOUT PAGE TEAMS */
 .team-card{
   /* width:40%; */
   /* gap:1%; */
