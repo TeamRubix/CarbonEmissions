@@ -11,6 +11,7 @@ const authRouter = require('./controllers/authentications');
 const dashboardRouter = require('./controllers/dashboards');
 const blogRouter = require('./controllers/blogs');
 
+
 const app = express();
 
 // view engine setup
@@ -88,6 +89,7 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/blog', blogRouter);
+
 
 
 // catch 404 and forward to error handler
