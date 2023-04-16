@@ -1,5 +1,26 @@
 <div class="container">
-    <h1>{{title}}</h1>
+    <h1 class="text-uppercase">{{title}}</h1>
+
+    <div class="d-grid justify-content-end">
+        <button class="btn-style me-2" onclick="refresh()">Refresh Charts Data</button>
+    </div>
+
+    <h1 class="m-auto text-center text-uppercase">Emission Overview</h1>
+
+    <div class="chart">
+        <section class="barGraph">
+            <div id="bar"></div>
+        </section>
+        <section class="lineGraph">
+            <div id="line"></div>
+        </section>
+        <section class="pieGraph">
+            <div id="pie"></div>
+        </section>
+        
+    </div>
+    
+    <h1 class="m-auto text-center text-uppercase">Food Emission Data</h1>
     <div class="table">
 
         {{#if emission}}
@@ -36,7 +57,7 @@
 
 
     <!-- Add Data -->
-
+    
     <div class="add-data">
         <div class="manual-upload">
             <h2>Manually Add Data</h2>
@@ -74,3 +95,39 @@
         </form>
     </div> --}}
 </div>
+
+<script>
+
+    const barSdk = new ChartsEmbedSDK({
+    baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+    showAttribution: false
+    });
+    const bar = barSdk.createChart({ chartId: '643b8a9d-1aec-4699-8e3d-3bc325e3f62f' });
+    bar.render(document.getElementById('bar'));
+    
+    function refresh() {
+        bar.refresh();
+    }
+
+    const lineSdk = new ChartsEmbedSDK({
+    baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+    showAttribution: false
+    });
+    const line = lineSdk.createChart({ chartId: '643b9771-2b11-4204-8ff9-f10d0f213a82' });
+    line.render(document.getElementById('line'));
+
+    
+    const pieSdk = new ChartsEmbedSDK({
+    baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+    showAttribution: false
+    });
+    const pie = pieSdk.createChart({ chartId: '643ba593-5949-4ac4-83a3-f4034418d5af' });
+    pie.render(document.getElementById('pie'));
+
+    function refresh() {
+        bar.refresh();
+        line.refresh();
+        pie.refresh();
+    }
+
+</script>

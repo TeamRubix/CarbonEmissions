@@ -15,7 +15,7 @@
 
   <script src="/javascripts/scripts.js"></script>
 
-  
+  <script src="https://unpkg.com/@mongodb-js/charts-embed-dom@beta"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -23,11 +23,10 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
 
-  <script
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
 
-<script src="/javascripts/chart.js"></script>
+  <script src="/javascripts/chart.js"></script>
 </head>
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
@@ -40,13 +39,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/index">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/dashboard/">Dashboard</a>
           </li>
 
           {{#if user}}
@@ -60,16 +53,21 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/dashboard/create">Emission Data</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <a class="nav-link" href="/dashboard/">Data Panel</a>
+              <a class="nav-link" href="/dashboard/create">Add Emission</a>
+            </ul>
           </li>
 
-          
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/blog/index">Blogs</a>
+          </li>
           {{/if}}
-
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/chart">Charts</a>
-          </li>
 
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -84,16 +82,15 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
           {{/unless}}
 
           {{#if user}}
-
           <li class="nav-item">
-            <a class="nav-link" href="/auth/logout">logout</a>
+            <a class="nav-link user-banner" href="#">
+              Welcome
+              {{user.username}}
+            </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link user-banner" href="#">
-              Hi!
-              {{user.username}}
-            </a>
+            <a class="nav-link" href="/auth/logout">logout</a>
           </li>
 
           {{/if}}
@@ -104,11 +101,10 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   </nav>
 </header>
 
-
 <body>
-  <div class="box">
+  <main class="box">
     {{{body}}}
-  </div>
+  </main>
 
   <footer class="bg-dark text-light py-5">
     <div class="container">
