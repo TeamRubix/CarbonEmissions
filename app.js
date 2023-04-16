@@ -58,8 +58,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-const User = require('./models/user');
-passport.use(User.createStrategy())
+const User = require('./models/user')
+passport.use(User.createStrategy(), )
 
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
@@ -74,6 +74,7 @@ passport.use(new googleStrategy({
 }, (accessToken, refreshToken, profile, done) => {
   User.findOrCreate({oauthId: profile.id}, {
     username: profile.displayName,
+    userRole: 'Student',
     oauthProvider: 'Google'
   }, (err, user)=> {
     return done (err, user);

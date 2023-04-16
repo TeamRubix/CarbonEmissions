@@ -78,7 +78,7 @@
          <h4 class="h4 mb-0 text-gray-800 mt-4">Add Data</h1>
          <a href="/dashboard/create" class="btn btn-dark w-25 m-2">Add Food Emission Data</a>
          <h5 class="h5 mb-0 offset-1 text-gray-800 mt-4">-OR-</h5>
-         <form action="/upload" method="post" enctype="multipart/form-data">
+         <form action="/dashboard/" method="post" enctype="multipart/form-data">
         <div>
             <label for="csv">Upload Data</label> <br />
             <input type="file" name="csv" id="csv">
@@ -99,6 +99,7 @@
                     <th>Emission Values kg (CO2e TTW)</th>
                     <th>Emission Values kg (CO2e WTW)</th>
                     <th>CO2e per kg</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -112,6 +113,16 @@
                     <td>{{this.valueTTW}}</td>
                     <td>{{this.valueWTW}}</td>
                     <td>{{this.valuePerkg}}</td>
+                    <td class="text-center">
+                        <a href="/dashboard/edit/{{this._id}}" title="Edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="/dashboard/delete/{{this._id}}" title="Delete" onclick="return confirmDelete();">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -121,8 +132,8 @@
 
 
     <!-- Add Data -->
-
-    <div class="add-data">
+    
+  {{!--  <div class="add-data">
         <div class="manual-upload">
             <h2>Manually Add Data</h2>
             <a href="/dashboard/create" class="btn-style-two">Add Data</a>
@@ -138,7 +149,7 @@
             <label for="csv">Choose CSV File:</label>
             <input type="file" name="csv" id="csv">
         </div>
-    </div>
+    </div>--}}
 
 
     {{!-- <div class="mt-4">

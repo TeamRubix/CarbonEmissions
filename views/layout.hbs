@@ -34,14 +34,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/index">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/dashboard/">Dashboard</a>
-          </li>
+          
 
           {{#if user}}
           <li class="nav-item dropdown">
@@ -54,9 +49,20 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/dashboard/create">Emission Data</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <a class="nav-link" href="/dashboard/">Data Panel</a>
+              <a class="nav-link" href="/dashboard/create">Add Emission</a>
+            </ul>
           </li>
+
+          {{else}}
+           <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/blog/index">Blogs</a>
+            </li>
           {{/if}}
 
         </ul>
@@ -72,16 +78,15 @@
           {{/unless}}
 
           {{#if user}}
-
-          <li class="nav-item">
-            <a class="nav-link" href="/auth/logout">logout</a>
-          </li>
-
           <li class="nav-item">
             <a class="nav-link user-banner" href="#">
-              Hi!
+              Welcome
               {{user.username}}
             </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/auth/logout">logout</a>
           </li>
 
           {{/if}}
@@ -94,9 +99,9 @@
 
 
 <body>
-  <div class="box">
+  <main class="box">
     {{{body}}}
-  </div>
+  </main>
 
   <footer class="bg-dark text-light py-5">
     <div class="container">
