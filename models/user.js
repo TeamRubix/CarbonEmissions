@@ -13,9 +13,6 @@ const userSchema=new mongoose.Schema({
     password:{
         type:String
     },
-    userRole:{
-        type:String
-    },
     oauthProvider: {
         type:String
     },
