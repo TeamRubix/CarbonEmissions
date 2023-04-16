@@ -275,7 +275,20 @@ img#about {
   outline: none;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  text-decoration: none;
+}
+.btn-style-one:hover {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: yellow;
+  padding: 10px 15px;
+  font-weight: 600;
+  overflow: hidden;
+  background-image: linear-gradient(180deg, #0575e6, #021b79);
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .btn-style-two {
@@ -954,6 +967,7 @@ div.item select {
   /* display: inline-block; */
 }
 
+
 /* dashboard styles start */
 
 div.add-data {
@@ -1056,3 +1070,27 @@ div.chart{
   /* margin-left: 5%; */
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
 }
+
+/* ABOUT PAGE TEAMS */
+.team-card{
+  /* width:40%; */
+  /* gap:1%; */
+  border:1px solid grey;
+  border-radius:4px;
+  background-color:white;
+}
+.tm-description{
+  padding:5px 10px;
+}
+img{
+  width:100%;
+  height:auto;
+}
+.team-body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:2%;
+  /* margin-top:20px; */
+}
+
