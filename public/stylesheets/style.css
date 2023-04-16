@@ -1031,3 +1031,16 @@ form.data-form input.form-input {
   padding: 1rem;
   min-width: 500px;
 }
+
+.chart{
+  display: flex;
+  margin: 4% 2%;
+}
+
+.chart section{
+  display: grid;
+  height: 300px;
+  width: 400px;
+  margin-left: 5%;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
+}
