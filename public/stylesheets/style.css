@@ -438,9 +438,8 @@ img#about {
 
 /* About Us Page CSS*/
 
-.below-fold .card {
-  transition: all 0.2s ease-in-out;
-  border: none;
+.mission h1, .service-26 h2, .service-26 h3, .service-26 h4, .service-26 h5, .service-26 h6 {
+  color: #3e4555;
 }
 
 .below-fold .card-img-top {
@@ -453,18 +452,24 @@ img#about {
   text-align: center;
 }
 
-.below-fold .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(40deg, #f12711, #f5af19);
-  /* Change the background color */
-  transition-delay: 0.3s;
+.mission .badge-info {
+	background: #188ef4;
 }
 
-.below-fold .card:hover h5,
-.below-fold .card:hover p {
-  color: white;
-  /* Change the text color */
+.mission .wrap-mission .max-box {
+  max-width: 580px;
+}
+
+.mission a {
+	text-decoration: none;
+}
+
+.mission .linking {
+	color: #3e4555;
+}
+
+.mission .linking:hover {
+	color: #316ce8;
 }
 
 .team-section .body {
@@ -975,20 +980,19 @@ div.add-data {
   align-items: flex-start;
   justify-content: center;
 }
-
-div.add-data>div {
-  width: 300px;
-  margin: 2rem;
+.tm-description{
+  padding:5px 10px;
 }
-
-/* dashboard table  */
-tr{
-  font-family: 'Raleway',sans-serif;
-  font-weight: 700;
+img{
+  width:100%;
+  height:auto;
 }
-td{
-  font-family: 'Quicksand',sans-serif;
-  font-weight: 500;
+.team-body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:2%;
+  /* margin-top:20px; */
 }
 
 table {
