@@ -1028,9 +1028,6 @@ img {
   padding: 0;
   list-style: none;
 }
-
-
-
 .single_footer ul li a {
   color: #fff;
   -webkit-transition: all 0.3s ease 0s;
@@ -1254,18 +1251,23 @@ div.table {
 
 
 form.blog {
-  width: auto;
-  flex-direction: column;
-  display: flex;
-  align-items: flex-start;
+  margin: 0 auto;
   justify-content: center;
+  text-align: center;
+  /* margin-top: 2%; */
+  font-size: 15px;
+  /* width: auto; */
+  /* flex-direction: column; */
+  /* display: flex; */
+  /* align-items: flex-start; */
+  /* justify-content: center; */
 }
 
 form.blog input {
   display: block;
-
+  margin: 0 auto !important;
   height: 4em !important;
-  width: 40em ;
+  width: 35em ;
 }
 
 form.blog div {
@@ -1274,6 +1276,7 @@ form.blog div {
 
 form.blog textarea {
   display: block;
+  margin: 0 auto !important;
   height: 10em;
   width: 40em;
 }

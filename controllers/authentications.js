@@ -53,22 +53,22 @@ router.get('/setRoles', (req, res) => {
     if(req.session.userRole == 'Student')
     {
         console.log("This is a Student");
-        res.redirect('/dashboard/');
+        res.redirect('/dashboard');
     }
     else if(req.session.userRole == 'Educator')
     {
         console.log("This is a Educator");
-        res.redirect('/dashboard/create');
+        res.redirect('/dashboard');
     }
     else if(req.session.userRole == 'HTRFaculty')
     {
         console.log("This is a HTR Faculty");
-        res.redirect('/dashboard/');
+        res.redirect('/dashboard');
     }
     else if(req.session.userRole == 'CommunityMember')
     {
         console.log("This is a Community Member");
-        res.redirect('/dashboard/');
+        res.redirect('/dashboard');
     }
 });
 
