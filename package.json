@@ -20,6 +20,8 @@
     "hbs": "^4.2.0",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.3",
+    "json-to-csv-export": "^2.1.1",
+    "json2csv": "^6.0.0-alpha.2",
     "mongoose": "^6.9.1",
     "mongoose-findorcreate": "^3.0.0",
     "morgan": "~1.9.1",

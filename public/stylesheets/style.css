@@ -76,7 +76,6 @@ nav, .navbar{
 }
 
 .text-dark {
-.text-dark {
   color: #000000 !important;
 }
 
@@ -963,14 +962,6 @@ div.item select {
 }
 
 /* ALISHA ABOUT PAGE TEAMS */
-.team-card {
-.team-card {
-  /* width:40%; */
-  /* gap:1%; */
-  /* border: 1px solid grey; */
-  /* border-radius: 4px; */
-  /* background-color: white; */
-}
 
 img {
   width: 100%;
@@ -998,7 +989,6 @@ img {
 }
 
 /*END FOOTER SOCIAL DESIGN*/
-.single_footer {}
 
 @media only screen and (max-width:768px) {
   .single_footer {
@@ -1035,8 +1025,6 @@ img {
   list-style: none;
 }
 
-.single_footer ul li {}
-
 .single_footer ul li a {
   color: #fff;
   -webkit-transition: all 0.3s ease 0s;
@@ -1049,10 +1037,6 @@ img {
 .single_footer ul li a:hover {
   color: #f5af19;
 }
-
-.single_footer_address {}
-
-.single_footer_address ul {}
 
 .single_footer_address ul li {
   color: #fff;
@@ -1264,18 +1248,23 @@ div.table {
 
 
 form.blog {
-  width: auto;
-  flex-direction: column;
-  display: flex;
-  align-items: flex-start;
+  margin: 0 auto;
   justify-content: center;
+  text-align: center;
+  /* margin-top: 2%; */
+  font-size: 15px;
+  /* width: auto; */
+  /* flex-direction: column; */
+  /* display: flex; */
+  /* align-items: flex-start; */
+  /* justify-content: center; */
 }
 
 form.blog input {
   display: block;
-
+  margin: 0 auto !important;
   height: 4em !important;
-  width: 40em ;
+  width: 35em ;
 }
 
 form.blog div {
@@ -1284,6 +1273,7 @@ form.blog div {
 
 form.blog textarea {
   display: block;
+  margin: 0 auto !important;
   height: 10em;
   width: 40em;
 }
