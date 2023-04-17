@@ -45,7 +45,9 @@
             </a>
             <ul class="dropdown-menu">
               <a class="nav-link" href="/blog/index">Show Blogs</a>
-              <a class="nav-link" href="/blog/create">Create Blogs</a>
+              {{#if CommunityMember}}
+                <a class="nav-link" href="/blog/create">Create Blogs</a>
+              {{/if}}
             </ul>
           </li>
 

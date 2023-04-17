@@ -5,6 +5,11 @@ const FoodEmission = require('../models/foodEmission');
 const csvtojson = require('csvtojson');
 const multer = require('multer');
 
+// const csvdata = require('json-to-csv-export');
+
+// const Json2csvParser = require('json2csv').Parser;
+// const mongodb = require('mongodb').MongoClient;
+
 const global = require('../controllers/globalFunctions');
 
 
@@ -20,7 +25,7 @@ router.get('/', (req,res)=>{
                 user: req.user
             });
         }
-    });
+        });
     
 });
 
@@ -49,6 +54,7 @@ router.post('/create', global.isAuthenticated,(req,res)=>{
 
 // we are using Multer storage to handle the file uploads. This storage will be used to access the uploaded file.
 const fs = require('fs');
+const { default: csvDownload } = require('json-to-csv-export');
 const excelStorage = multer.diskStorage({  
   destination:(req,file,cb)=>{ 
     const path = 'public/excelUploads';
@@ -102,6 +108,34 @@ router.post('/', excelUploads.single("csv"), (req, res) =>{
          }
 })
 /**********************ENDS******************************************** */
+
+// router.get('/csvdownload', (res, req) => {
+
+    // FoodEmission.find((err,emission) => {
+    //     if (err){
+    //         console.log(err);
+    //     }
+    //     else {
+    //         const dataToConvert = {
+    //             data: emission,
+    //             filename: 'foodemission_download.csv',
+    //             delimiter: ',',
+    //             headers: ['foodName', "originPoint", "transportDistance", "weight", "unitsTotal", "valueTTW", "valueWTW", "valuePerkg" ]
+    //           }
+    //         const json2csvParser = new Json2csvParser({ header: true });
+    //         console.log(emission);
+    //         const csvData = json2csvParser.parse(emission);
+    //         console.log(csvData);
+    //         fs.writeFile("foodemission_mongodb_fs.csv", csvData, function(error) {
+    //             if (error) throw error;
+    //             console.log("Write to bezkoder_mongodb_fs.csv successfully!");
+    //         });
+
+    //         res.redirect('/');
+
+//         }
+//     })
+// });
 
 
 module.exports= router;
