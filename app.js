@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+
 //Add Controllers Here
 const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
@@ -80,7 +81,6 @@ passport.use(new googleStrategy({
     return done (err, user);
   })
 }));
-
 
 //passport config ends
 

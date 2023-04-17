@@ -72,7 +72,7 @@ li {
   color: #000000 !important;
 }
 
-/* calculator */
+/* ALISHA calculator */
 .calcBar {
   display: none;
   min-height: 340px;
@@ -261,7 +261,23 @@ img#about {
 .list-style-one li a:hover {
   color: #44bce2;
 }
-
+.btn-style-upload {
+  /* position: relative; */
+  /* display: inline-block; */
+  /* font-size: 20px; */
+  color: #ffffff;
+  /* padding: 10px 15px; */
+  /* font-weight: 600; */
+  /* overflow: hidden; */
+  background-image: linear-gradient(180deg, #0575e6, #021b79);
+  /* border-radius: 1rem; */
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.chart-box{
+  min-height: 500px;
+}
 .btn-style-one {
   position: relative;
   display: inline-block;
@@ -275,7 +291,20 @@ img#about {
   outline: none;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  text-decoration: none;
+}
+.btn-style-one:hover {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: yellow;
+  padding: 10px 15px;
+  font-weight: 600;
+  overflow: hidden;
+  background-image: linear-gradient(180deg, #0575e6, #021b79);
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .btn-style-two {
@@ -293,6 +322,7 @@ img#about {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-decoration: none;
 }
+/* DASHBOARD ALISHA */
 
 /* Homepage About section */
 .about-section {
@@ -425,9 +455,8 @@ img#about {
 
 /* About Us Page CSS*/
 
-.below-fold .card {
-  transition: all 0.2s ease-in-out;
-  border: none;
+.mission h1, .service-26 h2, .service-26 h3, .service-26 h4, .service-26 h5, .service-26 h6 {
+  color: #3e4555;
 }
 
 .below-fold .card-img-top {
@@ -440,18 +469,24 @@ img#about {
   text-align: center;
 }
 
-.below-fold .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(40deg, #f12711, #f5af19);
-  /* Change the background color */
-  transition-delay: 0.3s;
+.mission .badge-info {
+	background: #188ef4;
 }
 
-.below-fold .card:hover h5,
-.below-fold .card:hover p {
-  color: white;
-  /* Change the text color */
+.mission .wrap-mission .max-box {
+  max-width: 580px;
+}
+
+.mission a {
+	text-decoration: none;
+}
+
+.mission .linking {
+	color: #3e4555;
+}
+
+.mission .linking:hover {
+	color: #316ce8;
 }
 
 .team-section .body {
@@ -954,6 +989,10 @@ div.item select {
   /* display: inline-block; */
 }
 
+/* ALISHA ABOUT PAGE TEAMS */
+
+
+
 /* dashboard styles start */
 
 div.add-data {
@@ -961,20 +1000,19 @@ div.add-data {
   align-items: flex-start;
   justify-content: center;
 }
-
-div.add-data>div {
-  width: 300px;
-  margin: 2rem;
+.tm-description{
+  padding:5px 10px;
 }
-
-/* dashboard table  */
-tr{
-  font-family: 'Raleway',sans-serif;
-  font-weight: 700;
+img{
+  width:100%;
+  height:auto;
 }
-td{
-  font-family: 'Quicksand',sans-serif;
-  font-weight: 500;
+.team-body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:2%;
+  /* margin-top:20px; */
 }
 
 table {
@@ -1055,3 +1093,28 @@ div.chart{
   /* margin-left: 5%; */
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
 }
+
+/* ABOUT PAGE TEAMS */
+
+.team-card{
+  /* width:40%; */
+  /* gap:1%; */
+  border:1px solid grey;
+  border-radius:4px;
+  background-color:white;
+}
+.tm-description{
+  padding:5px 10px;
+}
+img{
+  width:100%;
+  height:auto;
+}
+.team-body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:2%;
+  /* margin-top:20px; */
+}
+

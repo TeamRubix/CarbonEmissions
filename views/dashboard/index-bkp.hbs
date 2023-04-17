@@ -1,0 +1,130 @@
+<div class="container">
+    <h1 class="text-uppercase">{{title}}</h1>
+
+    <div class="d-grid justify-content-end">
+        <button class="btn-style me-2" onclick="refresh()">Refresh Charts Data</button>
+    </div>
+
+    <div class="chart">
+        <section class="barGraph">
+            <div id="bar"></div>
+        </section>
+        <section class="lineGraph">
+            <div id="line"></div>
+        </section>
+        <section class="pieGraph">
+            <div id="pie"></div>
+        </section>
+        
+    </div>
+    
+    <h1 class="m-auto text-center text-uppercase">Food Emission Data</h1>
+    <div class="table">
+
+        {{#if emission}}
+        <table class="table table-striped table-hover mt-5">
+            <thead class="text-center">
+                <tr>
+                    <th>Food</th>
+                    <th>Point of Origin</th>
+                    <th>Transport Distance (km)</th>
+                    <th>Weight (kg)</th>
+                    <th>Units</th>
+                    <th>Emission Values kg (CO2e TTW)</th>
+                    <th>Emission Values kg (CO2e WTW)</th>
+                    <th>CO2e per kg</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {{#each emission}}
+                <tr class="m-auto text-center">
+                    <td>{{this.foodName}}</td>
+                    <td>{{this.originPoint}}</td>
+                    <td>{{this.transportDistance}}</td>
+                    <td>{{this.weight}}</td>
+                    <td>{{this.unitsTotal}}</td>
+                    <td>{{this.valueTTW}}</td>
+                    <td>{{this.valueWTW}}</td>
+                    <td>{{this.valuePerkg}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{/if}}
+    </div>
+
+
+    <!-- Add Data -->
+    <div class="add-data">
+        <div class="manual-upload">
+            <h2>Manually Add Data</h2>
+            <a href="/dashboard/create" class="btn-style-two">Add Data</a>
+        </div>
+
+        <div class="csv-upload">
+            <h2>Upload CSV Data File</h2>
+            <form method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="csv">Choose CSV File:</label>
+                    <input type="file" name="csv" id="csv" />
+                </div>
+
+                <button class="btn-style-one mt-2" type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+
+    {{!-- <div class="mt-4">
+
+    </div>
+
+
+    <div class="mt-5 ">
+        <h1 class="display-4 fw-bold lh-1">Upload CSV File</h1>
+        <form method="post" enctype="multipart/form-data">
+            <div>
+                <label for="csv">Choose CSV File:</label>
+                <input type="file" name="csv" id="csv" />
+            </div>
+            <br />
+            <button class="btn-style-two" type="submit">Upload</button>
+        </form>
+    </div> --}}
+</div>
+
+<script>
+
+    const barSdk = new ChartsEmbedSDK({
+    baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+    showAttribution: false
+    });
+    const bar = barSdk.createChart({ chartId: '643b8a9d-1aec-4699-8e3d-3bc325e3f62f' });
+    bar.render(document.getElementById('bar'));
+    
+    function refresh() {
+        bar.refresh();
+    }
+
+    const lineSdk = new ChartsEmbedSDK({
+    baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+    showAttribution: false
+    });
+    const line = lineSdk.createChart({ chartId: '643b9771-2b11-4204-8ff9-f10d0f213a82' });
+    line.render(document.getElementById('line'));
+
+    
+    const pieSdk = new ChartsEmbedSDK({
+    baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+    showAttribution: false
+    });
+    const pie = pieSdk.createChart({ chartId: '643ba593-5949-4ac4-83a3-f4034418d5af' });
+    pie.render(document.getElementById('pie'));
+
+    function refresh() {
+        bar.refresh();
+        line.refresh();
+        pie.refresh();
+    }
+
+</script>
