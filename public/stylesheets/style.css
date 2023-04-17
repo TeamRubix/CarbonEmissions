@@ -330,7 +330,7 @@ img#about {
 }
 
 .about-section .sec-title {
-  margin-bottom: 45px;
+  margin-bottom: 2rem
 }
 
 .about-section .content-column {
@@ -344,7 +344,7 @@ img#about {
 }
 
 .about-section .text {
-  margin-bottom: 20px;
+  
   font-size: 16px;
   line-height: 26px;
   color: #848484;
@@ -1078,7 +1078,6 @@ div.chart{
   display: flex;
   align-items: center;
   justify-content: center;
-
   display: flex;
   margin: 2% 2%;
 }
