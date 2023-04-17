@@ -16,10 +16,8 @@ router.get('/', (req,res)=>{
                 user: req.user
             });
         }
-    });
-    
+    }); 
 });
-
 router.get('/create', global.isAuthenticated,(req,res)=>{
     res.render('dashboard/create', {
         title:'Dashboard - Food Emission Data',
@@ -40,7 +38,46 @@ router.post('/create', global.isAuthenticated,(req,res)=>{
     });
 });
 
+/* GET/delete/abc123212 => to delete the selected food from table*/
+router.get('/delete/:_id',global.isAuthenticated, (req, res) => {
+        FoodEmission.remove({ _id: req.params._id }, (err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                res.redirect('/dashboard');
+            }
+        });
+    });
 
+    /* GET /edit/abc123 => fetch & display selected food */
+    router.get('/edit/:_id', global.isAuthenticated, (req, res) => {
+        FoodEmission.findById(req.params._id, (err, emission) => {
+            if (err) {
+                console.log(err);
+            }
+                    else {
+                         res.render('dashboard/edit', {
+                            emission: emission,
+                            title: 'Edit Food Emissions',
+                           
+                        });
+                    }
+                             
+        });
+    });
+
+    /* POST /edit/abc123 => update selected food */
+    router.post('/edit/:_id', global.isAuthenticated, (req, res) => {
+        FoodEmission.findByIdAndUpdate({ _id: req.params._id }, req.body, null, (err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                res.redirect('/dashboard');
+            }
+        });
+    });
 
 
 // we are using Multer storage to handle the file uploads. This storage will be used to access the uploaded file.
