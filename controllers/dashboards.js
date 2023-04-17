@@ -1,16 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const FoodEmission = require('../models/foodEmission');
-
 const csvtojson = require('csvtojson');
 const multer = require('multer');
-
 const global = require('../controllers/globalFunctions');
+
+router.get('/', (req,res)=>{
+    FoodEmission.find((err,emission) => {
+        if(err) {
+
 
 
 router.get('/', (req, res) => {
     FoodEmission.find((err, emission) => {
         if (err) {
+
             console.log(err);
         }
         else {
