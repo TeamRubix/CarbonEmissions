@@ -80,7 +80,7 @@ router.post("/", excelUploads.single("csv"), (req, res) => {
                     };
                     arrayToInsert.push(singleRow);
                 }
-                //inserting into the table student
+                //inserting into the table 
                 FoodEmission.insertMany(arrayToInsert, (err, result) => {
                     if (err) console.log(err);
                     if (result) {
