@@ -3,7 +3,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box ;
 }
 
 h1,
@@ -455,9 +455,8 @@ img#about {
 
 /* About Us Page CSS*/
 
-.below-fold .card {
-  transition: all 0.2s ease-in-out;
-  border: none;
+.mission h1, .service-26 h2, .service-26 h3, .service-26 h4, .service-26 h5, .service-26 h6 {
+  color: #3e4555;
 }
 
 .below-fold .card-img-top {
@@ -470,18 +469,24 @@ img#about {
   text-align: center;
 }
 
-.below-fold .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(40deg, #f12711, #f5af19);
-  /* Change the background color */
-  transition-delay: 0.3s;
+.mission .badge-info {
+	background: #188ef4;
 }
 
-.below-fold .card:hover h5,
-.below-fold .card:hover p {
-  color: white;
-  /* Change the text color */
+.mission .wrap-mission .max-box {
+  max-width: 580px;
+}
+
+.mission a {
+	text-decoration: none;
+}
+
+.mission .linking {
+	color: #3e4555;
+}
+
+.mission .linking:hover {
+	color: #316ce8;
 }
 
 .team-section .body {
@@ -983,7 +988,115 @@ div.item select {
   width: 180px !important;
   /* display: inline-block; */
 }
+
 /* ALISHA ABOUT PAGE TEAMS */
+
+
+
+/* dashboard styles start */
+
+div.add-data {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.tm-description{
+  padding:5px 10px;
+}
+img{
+  width:100%;
+  height:auto;
+}
+.team-body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:2%;
+  /* margin-top:20px; */
+}
+
+table {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  min-width: 130px !important;
+  text-align: left;
+  padding: 8px;
+}
+
+
+div.table{
+  overflow-x: auto;
+}
+
+@media 
+only screen and (max-width: 600px){
+  div.add-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  div.add-data>div {
+    width: 300px;
+    margin: 2rem;
+  }
+
+  form.data-form input.form-input {
+    min-width: 300px !important;
+  }
+
+  div.chart{
+    flex-direction: column;
+  }
+}
+
+/* dashbard styles ends */
+
+
+/* form styles */
+
+form.data-form{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.data-form input.form-input {
+  padding: 1rem;
+  min-width: 500px;
+}
+
+div.chart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  margin: 2% 2%;
+}
+
+
+
+.chart section{
+  border-radius: 2rem !important;
+  margin: 1rem;
+  display: grid;
+  height: 300px;
+  width: 400px;
+  /* margin-left: 5%; */
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
+}
+
+/* ABOUT PAGE TEAMS */
+
 .team-card{
   /* width:40%; */
   /* gap:1%; */
@@ -1005,3 +1118,4 @@ img{
   gap:2%;
   /* margin-top:20px; */
 }
+
