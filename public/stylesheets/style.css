@@ -25,12 +25,13 @@ li {
 }
 
 .box {
-  padding: 1rem;
+  padding: 2rem;
 }
 nav, .navbar{
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; 
+  font-size: 17px;
 }
 .navbar-dark {
   background: linear-gradient(200deg, #021b79, #0575e6) !important;
@@ -178,8 +179,9 @@ footer>.flare {
 
 /**HOMEPAGE CSS*/
 .logo {
-  width: 80px;
+  width: 60px;
   height: auto;
+  filter: invert();
 }
 
 /** About us in HomePage*/
