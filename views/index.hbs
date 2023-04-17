@@ -1,5 +1,6 @@
 <!-- HERO -->
-<div class="container my-5">
+<h1 class="display-1 text-center mb-3">{{title}}</h1>
+<div class="container-fluid px-3">
 	<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
 		<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
 			<h1 class="display-4 fw-bold lh-1">CCSI Food Emissions</h1>
@@ -18,7 +19,7 @@
 	</div>
 </div>
 <!--BELOW THE FOLD-->
-<div class="container my-5 pb-5 mb-3 calculator">
+<div class="container-fluid my-5 px-3 calculator">
 	<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
 		<h1 class="display-4 fw-bold lh-1">What's your Carbon Footprint?</h1>
 		<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -43,24 +44,24 @@
 </div>
 <!-- Script for Calculator-->
 <script>
-	var res = document.getElementById('result');
-	var res2 = document.getElementById("result2");
-	var res3 = document.getElementById("result3");
-	var res4 = document.getElementById("result4");
-	var mpg = document.getElementById('mpg');
-	var dist = document.getElementById('dist');
-	var trip = document.getElementById('trips');
+	let res = document.getElementById('result');
+	let res2 = document.getElementById("result2");
+	let res3 = document.getElementById("result3");
+	let res4 = document.getElementById("result4");
+	let mpg = document.getElementById('mpg');
+	let dist = document.getElementById('dist');
+	let trip = document.getElementById('trips');
 	function calcCO2() {
-		var custom = document.getElementById('calcBar');
+		let custom = document.getElementById('calcBar');
   custom.className += 'calc';
 
-		var x = mpg.value;
-		var y = dist.value;
-		var z = trips.value;
-		var calc4 = (8.8 / x) * 1000;
-		var calc = (calc4 * y) / 1000;
-		var calc2 = (calc * z);
-		var calc3 = (calc2 * 52);
+		let x = mpg.value;
+		let y = dist.value;
+		let z = trips.value;
+		let calc4 = (8.8 / x) * 1000;
+		let calc = (calc4 * y) / 1000;
+		let calc2 = (calc * z);
+		let calc3 = (calc2 * 52);
 		calc = calc.toFixed(2);
 		calc2 = calc2.toFixed(2);
 		calc3 = calc3.toFixed(2);
@@ -111,33 +112,39 @@
 
 {{!-- CANADA MAP --}}
 {{!-- Thankyou Shawn from Codepen for this beautiful Canada Map SVG https://codepen.io/Shawnsan/pen/xRwzyg --}}
-<div class="container mt-4 pt-4">
-	<div class="row mt-4 pt-4">
-		<div class="col-3 mt-4 pt-4">
-			<h1 class="display-1"> Emissions within Canada</h1>
+<div class="container-fluid my-5 p-3 rounded-3 border shadow-lg">
+	<h1 class="display-1 my-3 text-center"> Emissions within Canada</h1>
+	<div class="row p-4">
+		<div class="col-12 col-md-4">
+			
 			<ul class="list-group list-group-flush border custommargin">
 				{{!-- <i class="fa-solid fa-square fa-lg" id="${provinceId}"></i> ${provinceName} - ${emissions} kg
 				CO2eq/year --}}
 				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="NFL_L"></i> Newfoundland & Labrador
-					- </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="BC"></i> British Colombia - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nova_Scotia"></i> Nova Scotia -
+					- 5.0 Mt</li>
+					{{!-- https://www.foodfirstnl.ca/blog/food-loss-waste-nl --}}
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="BC"></i> British Colombia - 25 Mt</li>
+				{{!-- https://www2.gov.bc.ca/assets/gov/environment/climate-change/cng/methodology/2020-pso-methodology.pdf --}}
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nova_Scotia"></i> Nova Scotia - 5.1 Mt
 				</li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Quebec"></i> Quebec - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Ontario"></i> Ontario - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Yukon"></i> Yukon - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="NWT"></i> North West Territories -
+				{{!-- https://novascotia.ca/finance/statistics//news.asp?id=15204 --}}
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Quebec"></i> Quebec - 20 Mt </li>
+				{{!-- https://www.recyc-quebec.gouv.qc.ca/sites/default/files/documents/etude-quantification-pertes-qc-en-faits-saillants.pdf --}}
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Ontario"></i> Ontario - 84 Mt</li>
+				{{!-- https://www.sciencedirect.com/science/article/abs/pii/S0959652617311940 --}}
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Yukon"></i> Yukon - 60 Mt </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="NWT"></i> North West Territories - 29 Mt
 				</li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nunavut"></i> Nunavut - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="PEI"></i> Prince Edward Island -
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Nunavut"></i> Nunavut - 3.4 Mt</li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="PEI"></i> Prince Edward Island - 5.3 Mt
 				</li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="New_Brunswick"></i> New Brunswick -
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="New_Brunswick"></i> New Brunswick - 4.7 Mt
 				</li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Manitoba"></i> Manitoba - </li>
-				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Sask"></i> Saskatchewan - </li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Manitoba"></i> Manitoba - 4.7 Mt</li>
+				<li class="list-group-item"><i class="fa-solid fa-square fa-lg" id="Sask"></i> Saskatchewan - 5.6 Mt</li>
 			</ul>
 		</div>
-		<div class="col-6">
+		<div class="col-12 col-md-8 ">
 			<svg version="1.1" id="canadaMap" xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 694.4 685"
 				style="enable-background:new 0 0 694.4 685;" xml:space="preserve">
