@@ -70,6 +70,10 @@ nav, .navbar{
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
   color: #fff;
 }
+.blog-height{
+  height: 100%;
+}
+
 
 #userrole {
   color: #f12711;
@@ -1024,7 +1028,6 @@ img {
   padding: 0;
   list-style: none;
 }
-
 .single_footer ul li a {
   color: #fff;
   -webkit-transition: all 0.3s ease 0s;
