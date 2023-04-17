@@ -1,24 +1,23 @@
+<h1 class="display-1 text-center mb-3">Community Communication</h1>
 
-    <h1 class="display-1 text-center mb-3">Community Communication</h1>
-
-
-{{#each blogs}}
-<div id="blog" class="container-fluid px-5 my-5">
- 
-    <div class="blog-post px-5 row">
-        <div class="blog-post-img col-sm-12 col-md-6">
-            <img src="/images/about-header.jpg" alt="" />
-        </div>
-        <div class="blog-post-info col-sm-12 col-md-6">
-            <h1 class="blog-post-title">
-                <span>{{this.title}}</span>
-            </h1>
-            <hr />
-            <p class="blog-post-text">
-                {{this.description}}
-            </p>
+<div class="row m-0 p-0 justify-content-center">
+    {{#each blogs}}
+    <div class="col-3  border border-1 m-2 p-2 user-banner2">
+        <div class="card border-0">
+            <img class="card-img" src="https://source.unsplash.com/800x600/?food-emissions" alt="blogPost">
+            
+            <div class="card-img-overlay">
+                <a href="#" class="btn btn-light btn-sm"> NEW</a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{this.title}}</h4>
+                <br />
+                <p class="card-text blog-height"><i class="fa-solid fa-quote-left text-warning"></i>
+                    {{this.description}}
+                    <i class="fa-solid fa-quote-right text-warning"></i>
+                </p>
+            </div>
         </div>
     </div>
+    {{/each}}
 </div>
-
-{{/each}}

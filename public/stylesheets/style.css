@@ -70,12 +70,15 @@ nav, .navbar{
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
   color: #fff;
 }
+.blog-height{
+  height: 100%;
+}
+
 
 #userrole {
   color: #f12711;
 }
 
-.text-dark {
 .text-dark {
   color: #000000 !important;
 }
@@ -963,14 +966,6 @@ div.item select {
 }
 
 /* ALISHA ABOUT PAGE TEAMS */
-.team-card {
-.team-card {
-  /* width:40%; */
-  /* gap:1%; */
-  /* border: 1px solid grey; */
-  /* border-radius: 4px; */
-  /* background-color: white; */
-}
 
 img {
   width: 100%;
@@ -998,7 +993,6 @@ img {
 }
 
 /*END FOOTER SOCIAL DESIGN*/
-.single_footer {}
 
 @media only screen and (max-width:768px) {
   .single_footer {
@@ -1035,7 +1029,7 @@ img {
   list-style: none;
 }
 
-.single_footer ul li {}
+
 
 .single_footer ul li a {
   color: #fff;
@@ -1049,10 +1043,6 @@ img {
 .single_footer ul li a:hover {
   color: #f5af19;
 }
-
-.single_footer_address {}
-
-.single_footer_address ul {}
 
 .single_footer_address ul li {
   color: #fff;
