@@ -19,6 +19,8 @@
 //   res4.innerHTML = calc4;
 // }
 
+
+
 // Global + Canada Map Tooltips
 $(function () {
   var world = document.getElementsByTagName("path");
