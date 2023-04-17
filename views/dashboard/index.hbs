@@ -165,44 +165,40 @@
 </div>
 <script>
 
-    const barSdk = new ChartsEmbedSDK({
-        baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
-        showAttribution: false
+  const barSdk = new ChartsEmbedSDK({
+    baseUrl:
+      'https://charts.mongodb.com/charts-project-0-eytfe', showAttribution: false
+  }); const bar = barSdk.createChart({
+    chartId:
+      '643b8a9d-1aec-4699-8e3d-3bc325e3f62f'
+  });
+  bar.render(document.getElementById('bar')); function refresh() {
+    bar.refresh();
+  } const lineSdk = new ChartsEmbedSDK({
+    baseUrl:
+      'https://charts.mongodb.com/charts-project-0-eytfe', showAttribution: false
+  }); const line = lineSdk.createChart({
+    chartId:
+      '643b9771-2b11-4204-8ff9-f10d0f213a82'
+  });
+  line.render(document.getElementById('line')); const pieSdk = new
+    ChartsEmbedSDK({
+      baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+      showAttribution: false
+    }); const pie = pieSdk.createChart({
+      chartId:
+        '643ba593-5949-4ac4-83a3-f4034418d5af'
     });
-    const bar = barSdk.createChart({ chartId: '643b8a9d-1aec-4699-8e3d-3bc325e3f62f' });
-    bar.render(document.getElementById('bar'));
-
-    function refresh() {
-        bar.refresh();
-    }
-
-    const lineSdk = new ChartsEmbedSDK({
-        baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
-        showAttribution: false
+  pie.render(document.getElementById('pie')); const mapSdk = new
+    ChartsEmbedSDK({
+      baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
+      showAttribution: false
+    }); const map = mapSdk.createChart({
+      chartId:
+        '643c4776-2d18-4b29-81d1-d05793a81226'
     });
-    const line = lineSdk.createChart({ chartId: '643b9771-2b11-4204-8ff9-f10d0f213a82' });
-    line.render(document.getElementById('line'));
-
-
-    const pieSdk = new ChartsEmbedSDK({
-        baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
-        showAttribution: false
-    });
-    const pie = pieSdk.createChart({ chartId: '643ba593-5949-4ac4-83a3-f4034418d5af' });
-    pie.render(document.getElementById('pie'));
-
-    const mapSdk = new ChartsEmbedSDK({
-        baseUrl: 'https://charts.mongodb.com/charts-project-0-eytfe',
-        showAttribution: false
-    });
-    const map = mapSdk.createChart({ chartId: '643c4776-2d18-4b29-81d1-d05793a81226' });
-    map.render(document.getElementById('map'));
-
-    function refresh() {
-        bar.refresh();
-        line.refresh();
-        pie.refresh();
-        map.refresh();
-    }
+  map.render(document.getElementById('map')); function refresh() {
+    bar.refresh(); line.refresh(); pie.refresh(); map.refresh();
+  }
 
 </script>

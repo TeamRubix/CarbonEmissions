@@ -63,6 +63,8 @@ nav, .navbar{
   display: inline-block !important;
   padding-left: 0.8rem !important;
   padding-right: 0.8rem !important;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
   border-radius: 1rem;
   background-image: linear-gradient(40deg, #f12711, #f5af19);
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
@@ -73,6 +75,7 @@ nav, .navbar{
   color: #f12711;
 }
 
+.text-dark {
 .text-dark {
   color: #000000 !important;
 }
@@ -134,13 +137,16 @@ select {
 }
 
 textarea {
-  padding: 12px 20px;
+  resize: none !important;
+
+  padding: 20px;
   box-sizing: border-box;
   border: none;
   box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 4px 0px;
   border-radius: 1rem;
   padding: 3px 5px;
   resize: none;
+  font-family: "Quicksand", sans-serif;
 }
 
 .formfield {
@@ -204,10 +210,7 @@ img#about {
   position: relative;
   display: block;
   font-size: 40px;
-  line-height: 1.28em;
   color: #222222;
-  font-weight: 600;
-  padding-bottom: 18px;
 }
 
 .sec-title .text {
@@ -264,6 +267,7 @@ img#about {
   color: #44bce2;
 }
 
+
 .btn-style-upload {
   /* position: relative; */
   /* display: inline-block; */
@@ -283,7 +287,9 @@ img#about {
   min-height: 600px;
 }
 
+
 .btn-style-one {
+  text-decoration: none;
   position: relative;
   display: inline-block;
   font-size: 20px;
@@ -329,6 +335,7 @@ img#about {
   text-decoration: none;
 }
 
+
 /* DASHBOARD ALISHA */
 
 /* Homepage About section */
@@ -351,9 +358,8 @@ img#about {
 }
 
 .about-section .text {
-  margin-bottom: 20px;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 20px;
+
   color: #848484;
   font-weight: 400;
 }
@@ -562,10 +568,8 @@ img#about {
 }
 
 #canadaMap {
-  width: 60vw;
   margin: 0 auto;
   display: block;
-  padding-top: 10vh;
 }
 
 svg {
@@ -728,12 +732,6 @@ svg {
   background: linear-gradient(to right, #f5af19, #f12711 100%);
 }
 
-@media (min-width: 768px) {
-  div#blog {
-    max-width: 960px !important;
-  }
-}
-
 #createBlog {
   font-size: 16px;
 }
@@ -804,16 +802,6 @@ div.item {
   margin: 10px 0px;
 }
 
-div.item input {
-  font-family: "Quicksand", sans-serif;
-  width: 250px !important;
-  align-items: center;
-
-  border: none;
-  border-radius: 16px;
-  padding: 4px 6px;
-}
-
 div.item select {
   font-family: "Quicksand", sans-serif;
   border: none;
@@ -822,6 +810,7 @@ div.item select {
   width: 180px !important;
   /* display: inline-block; */
 }
+
 
 .btn-style {
   border-radius: 2rem;
@@ -835,9 +824,6 @@ div.item select {
   background-image: linear-gradient(1800deg, #f12711, #f5af19);
 }
 
-
-
-
 .google {
   height: 60%;
   display: block;
@@ -846,8 +832,8 @@ div.item select {
   cursor: pointer;
   /* max-width: 20% !important; */
   filter: drop-shadow(2px 2px 2px #ccc);
-
 }
+
 
 /* register page styles */
 
@@ -884,35 +870,18 @@ footer ul li a {
   color: #fff;
 }
 
-footer ul li a:hover {
-  color: #f8b500;
-}
-
-footer form .btn {
-  background-image: linear-gradient(40deg, #f12711, #f5af19);
-  color: white;
-  border: linear-gradient(40deg, #f12711, #f5af19);
-}
-
-footer form .btn:hover {
-  background-color: #e5a300;
-  border-color: #e5a300;
-}
-
 footer p {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0;
 }
 
-footer a {
-  font-size: 14px;
+footer a,
+footer li a {
+  font-size: 20px;
+  font-weight: 400 !important;
   color: #fff;
   text-decoration: none;
-}
-
-footer a:hover {
-  color: #f8b500;
 }
 
 footer .navbar-brand img {
@@ -994,6 +963,7 @@ div.item select {
 }
 
 /* ALISHA ABOUT PAGE TEAMS */
+.team-card {
 .team-card {
   /* width:40%; */
   /* gap:1%; */
@@ -1246,4 +1216,151 @@ button {
 .custom-footer-logo {
   height: 41px;
   width: auto;
+}
+
+form.data-form {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form.data-form input.form-input {
+  padding: 1rem;
+  min-width: 500px;
+}
+
+/* dashboard styles  */
+tr {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+td {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+
+table {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  min-width: 130px !important;
+  text-align: left;
+  padding: 8px;
+}
+
+div.table {
+  overflow-x: auto;
+}
+
+
+
+
+form.blog {
+  width: auto;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+form.blog input {
+  display: block;
+
+  height: 4em !important;
+  width: 40em ;
+}
+
+form.blog div {
+  margin: 1rem;
+}
+
+form.blog textarea {
+  display: block;
+  height: 10em;
+  width: 40em;
+}
+
+svg.dashboard-map{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 2rem;
+}
+
+div.chart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+div.chart>div{
+  
+  margin: 1rem;
+  height: 400px;
+  width: 530px;
+  box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
+}
+
+@media only screen and (max-width: 1164px){
+
+  div.chart>div{
+  
+    margin: 1rem;
+    height: 400px;
+    min-width: 430px ;
+    width: 600px;
+    box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
+  }
+  
+}
+
+@media only screen and (max-width: 600px) {
+  div.add-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  div.add-data>div {
+    width: 300px;
+    margin: 2rem;
+  }
+
+  form.data-form input.form-input {
+    min-width: 300px !important;
+  }
+
+  div.chart {
+    flex-direction: column;
+  }
+
+  form.blog input {
+   
+  
+    height: 2em !important;
+    width: 20em  !important ;
+  }
+
+  form.blog textarea {
+   
+    height: 4em;
+    width: 20em !important;
+  }
+
+  div.chart>div{
+  
+    margin: 1rem;
+    height: 300px !important;
+    min-width: 300px !important;
+    width: 320px!important;
+    box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
+  }
 }
