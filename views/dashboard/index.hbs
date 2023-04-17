@@ -104,18 +104,22 @@
     <!-- Form Data-->
     <div class="row">
         {{!-- add data buttons --}}
-        <h4 class="h4 mb-0 text-gray-800 mt-4">Add Data</h1>
-            <h6 class="text-muted">Manually</h6>
-            <a href="/dashboard/create" class="btn btn-dark w-25 m-2">Add Food Emission Data</a>
-            <h6 class="text-muted">Upload Bulk Data</h6>
-            <form method="post" enctype="multipart/form-data">
-                <div>
-                    <label for="csv" class="btn btn-dark w-25 ">Choose CSV File</label>
-                    <input type="file" name="csv" id="csv" class="form-control w-25" />
-                </div>
-                <br>
-                <button class="btn-style-upload p-2 mb-3" type="submit">Upload</button>
-            </form>
+        <div class="col-lg m-3 text-center align-items-center rounded-4 border shadow-lg p-4">
+          <h4 class="h4 mb-0 text-gray-800 mt-4">Add Data</h4>
+          <h6 class="text-muted">Manually</h6>
+          <a href="/dashboard/create" class="btn btn-dark w-50 m-2">Add Food Emission Data</a>
+        </div>
+        <div class="col-lg m-auto text-center align-items-center rounded-4 border shadow-lg p-4 ">
+          <h6 class="text-muted">Upload Bulk Data</h6>
+          <form method="post" enctype="multipart/form-data">
+            <div>
+                <label for="csv" class="btn btn-dark w-25 ">Choose CSV File</label>
+                <input type="file" name="csv" id="csv" class="form-control w-50 m-auto" />
+            </div>
+            <br>
+            <button class="btn-style-upload p-2 mb-3" type="submit">Upload</button>
+          </form>
+        </div>
     </div>
      {{/if}}
     <!-- data table -->
@@ -131,7 +135,9 @@
                 <th scope="col">Emission Values kg (CO2e TTW)</th>
                 <th scope="col">Emission Values kg (CO2e WTW)</th>
                 <th scope="col">CO2e per kg</th> 
+                {{#if user}}
                 <th colspan="2">Actions</th>
+                {{/if}}
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -145,16 +151,18 @@
                     <td>{{this.valueTTW}}</td>
                     <td>{{this.valueWTW}}</td>
                     <td>{{this.valuePerkg}}</td>
-                    <td class="text-center">
-                        <a href="/dashboard/edit/{{this._id}}" title="Edit">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        <a href="/dashboard/delete/{{this._id}}" title="Delete" onclick="return confirmDelete();">
-                            <i class="fa-solid fa-trash"></i>
-                        </a>
-                    </td>
+                    {{#if ../ user}}
+                      <td class="text-center">
+                          <a href="/dashboard/edit/{{this._id}}" title="Edit">
+                              <i class="fa-solid fa-pen-to-square"></i>
+                          </a>
+                      </td>
+                      <td class="text-center">
+                          <a href="/dashboard/delete/{{this._id}}" title="Delete" onclick="return confirmDelete();">
+                              <i class="fa-solid fa-trash"></i>
+                          </a>
+                      </td>
+                    {{/if}}
                 </tr>
                 {{/each}}
             </tbody>
