@@ -4,14 +4,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-
 //Add Controllers Here
 const indexRouter = require('./controllers/index');
 const usersRouter = require('./controllers/users');
 const authRouter = require('./controllers/authentications');
 const dashboardRouter = require('./controllers/dashboards');
 const blogRouter = require('./controllers/blogs');
-
 
 const app = express();
 
@@ -82,6 +80,7 @@ passport.use(new googleStrategy({
   })
 }));
 
+
 //passport config ends
 
 app.use('/', indexRouter);
@@ -89,7 +88,6 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/blog', blogRouter);
-
 
 
 // catch 404 and forward to error handler
