@@ -32,4 +32,42 @@ router.post('/create',(req,res)=>{
     })
 })
 
+router.get('/edit/:_id', global.isAuthenticated, (req, res) => {
+    blog.findById(req.params._id, (err, blog) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.render('blog/edit', {
+                blog: blog,
+                title: 'Edit Blog',
+            });
+        }         
+    });
+});
+
+router.post('/edit/:_id', global.isAuthenticated, (req, res) => {
+    blog.findByIdAndUpdate({ _id: req.params._id }, req.body, null, (err) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.redirect('/blog/index');
+        }
+    });
+});
+
+
+router.get('/delete/:_id',global.isAuthenticated, (req, res) => {
+    blog.remove({ _id: req.params._id }, (err) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.redirect('/blog/index');
+        }
+    });
+});
+
+
 module.exports=router;

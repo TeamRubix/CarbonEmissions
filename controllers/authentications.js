@@ -70,6 +70,11 @@ router.get('/setRoles', (req, res) => {
         console.log("This is a Community Member");
         res.redirect('/dashboard');
     }
+    else if(req.session.userRole == 'Admin')
+    {
+        console.log("This is an Admin");
+        res.redirect('/dashboard');
+    }
 });
 
 
