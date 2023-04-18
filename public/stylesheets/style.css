@@ -207,7 +207,7 @@ img#about {
 .sec-title h2 {
   position: relative;
   display: block;
-  font-size: 40px;
+  font-size: 2rem;
   color: #222222;
 }
 
@@ -340,7 +340,7 @@ img#about {
 }
 
 .about-section .text {
-  font-size: 20px;
+  font-size: 1.2rem;
 
   color: #848484;
   font-weight: 400;
@@ -1211,16 +1211,10 @@ div.table {
 }
 
 form.blog {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  text-align: center;
-  /* margin-top: 2%; */
-  font-size: 15px;
-  /* width: auto; */
-  /* flex-direction: column; */
-  /* display: flex; */
-  /* align-items: flex-start; */
-  /* justify-content: center; */
 }
 
 form.blog input {
@@ -1309,16 +1303,20 @@ div.chart>div {
   }
 
   form.blog textarea {
-    height: 4em;
+    height: 20em;
     width: 20em !important;
   }
 
   div.chart>div {
     margin: 1rem;
     height: 300px !important;
-    min-width: 300px !important;
-    width: 320px !important;
+    min-width: 270px !important;
+    width: 270px !important;
     box-shadow: rgba(28, 28, 28, 0.2) 0px 2px 14px 0px;
+  }
+
+  div.blog-edit{
+    flex-direction: column !important;
   }
 }
 
@@ -1361,7 +1359,7 @@ div.add-data>div {
 
 .btn-common {
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   display: block;
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
@@ -1383,6 +1381,7 @@ div.add-data>div {
 .btn-common:hover,
 .btn-common:focus {
   background-color: #27ae60;
+  color: #fff;
 }
 
 .btn-common>* {
@@ -1421,4 +1420,18 @@ div.add-data>div {
   padding-top: 120%;
 
   transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+div.blog-edit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.blog-edit>div{
+  margin: 1rem;
+}
+
+form.blog{
+
 }
