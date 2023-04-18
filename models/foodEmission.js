@@ -3,28 +3,30 @@ const mongoose=require('mongoose');
 
 const emissionSchema = new mongoose.Schema({
     foodName: {
-        type: String
+        type: String,
+        required: 'This is required'
     },
     originPoint: {
-        type: String
+        type: String,
+        required: ' This is required'
     },
     transportDistance: {
-        type: String
+        type: Number
     },
     weight: {
-        type: String
+        type: Number
     },
     unitsTotal: {
-        type: String
+        type: Number
     },
     valueTTW: {
-        type: String
+        type: Number
     },
     valueWTW: {
-        type: String
+        type: Number
     },
     valuePerkg: {
-        type: String
+        type: Number
     }
 
 });
