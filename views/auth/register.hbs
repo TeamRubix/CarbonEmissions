@@ -1,44 +1,53 @@
-<div class="register-container mt-5">
-        <h1 class="text-center">Register</h1>
-        <form method="post" class="p-4" id="loginForm">
-        <fieldset>
-                <label for="username" >Username: *</label>
-                <input name="username" id="username" required type="email" placeholder="email@email.com" />
-        </fieldset>
-        <fieldset>
-                <label for="password" >Password: *</label>
-                <input name="password" id="password" type="password" required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
-                {{!-- <img src="/images/show.png" alt="Show/Hide" id="imgShowHide" onclick="showHide()" /> --}}
-        </fieldset>
-        <fieldset>
-                <label for="confirm" >Confirm: *</label>
-                <input name="confirm" id="confirm" type="password" required
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="return comparePasswords()" />
-                <span id="pwMsg"></span>
-        </fieldset>
-        <fieldset class="mt-3">
-                <select class="form-control text-center m-auto w-75" name="userRole" id="userRole" required>
-                        <option value="">Select A User Role</option>
-                        <option value="Student">Student</option>
-                        <option value="Educator">Educator</option>
-                        <option value="HTRFaculty">HTR Faculty</option>
-                        <option value="CommunityMember">Community Member</option>
-                </select>
-        </fieldset>
-        <fieldset class="text-center mt-3">
-                <button class="btn-style mt-2" onclick="return comparePasswords()">Register</button>
+{{!
 
-                <div class="SignIn item d-block text-center">
-                                <a href="/auth/google" class="mt-3">
-                                        <img src="/images/google-icon.svg" alt="google-logo" />
-                                        <span>Sign In</span>
-                                </a>
-                        
+}}
+
+<div class="register-container mt-5">
+        <h1 class="text-center">Login</h1>
+        <form method="post" class="p-4" id="loginForm">
+                <div class="item" id="item-1">
+                        {{! <label for="username" class="col-1 form-label">Username: </label> }}
+                        <input class="form-control text-center m-auto w-50" name="username" id="username"
+                                placeholder="Username" required />
+                </div>
+                <div class="item" id="item-2">
+                        {{! <label for="password" class="col-1 form-label">Password: </label> }}
+                        <input class="form-control text-center m-auto w-50" name="password" id="password"
+                                type="password" placeholder="Password" required />
                 </div>
 
-                <hr />
-                Already have an account?
-                <a href="/auth/login" title="Login">Login</a>
-        </fieldset>
-</form>
+                <div class="mt-3">
+                        <select class="form-control text-center m-auto w-75" name="userRole" id="userRole" required>
+                                <option value="">Select A User Role</option>
+                                <option value="Student">Student</option>
+                                <option value="Educator">Educator</option>
+                                <option value="HTRFaculty">HTR Faculty</option>
+                                <option value="CommunityMember">Community Member</option>
+                        </select>
+                </div>
+                <div class="item" id="item-2">
+                        <button class="btn-style" type="submit">Login</button>
+                </div>
+
+                <hr class="w-50 m-auto text-center border-danger mt-4" />
+
+                <div class="item text-center" id="item-6">
+                        <a href="/auth/google" class="m-auto text-center">
+                                <img src="/images/google-icon.svg" alt="google-logo" /><br />
+                                <span>Google Sign-in</span>
+                        </a>
+
+                </div>
+
+        </form>
+
+        <hr class="w-50 m-auto text-center border-danger" />
+
+        <div>
+                <p class="h5 m-4 mt-3">
+                        Need an account?
+                        <a href="/auth/register" title="Register">Register</a>
+                </p>
+        </div>
+
+</div>
