@@ -68,6 +68,7 @@ router.get('/delete/:_id',global.isAuthenticated, (req, res) => {
             }
                     else {
                          res.render('dashboard/edit', {
+                            user: req.user,
                             emission: emission,
                             title: 'Edit Food Emissions',
                            

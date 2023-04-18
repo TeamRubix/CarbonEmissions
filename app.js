@@ -89,6 +89,16 @@ app.use('/auth', authRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/blog', blogRouter);
 
+// Code help from https://stackoverflow.com/questions/34252817/handlebarsjs-check-if-a-string-is-equal-to-a-value
+const hbs = require('hbs');
+hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+  return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
+hbs.registerHelper('notEquals', function(arg1, arg2, options) {
+  return (arg1 != arg2) ? options.fn(this) : options.inverse(this);
+});
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

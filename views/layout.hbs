@@ -45,19 +45,28 @@
             </a>
             <ul class="dropdown-menu">
               <a class="nav-link" href="/blog/index">Show Blogs</a>
-              
-              <a class="nav-link" href="/blog/create">Create Blogs</a>
-              
+              {{#ifEquals user.userRole "Admin"}}
+                <a class="nav-link" href="/blog/create">Create Blogs</a>
+              {{/ifEquals}}
+              {{#ifEquals user.userRole "CommunityMember"}}
+                <a class="nav-link" href="/blog/create">Create Blogs</a>
+              {{/ifEquals}}
             </ul>
           </li>
-
+          
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dashboard
             </a>
             <ul class="dropdown-menu">
               <a class="nav-link" href="/dashboard/">Data Panel</a>
-              <a class="nav-link" href="/dashboard/create">Add Emission</a>
+              {{#ifEquals user.userRole "Admin"}}
+                <a class="nav-link" href="/dashboard/create">Add Emission</a>
+              {{/ifEquals}}
+              {{#ifEquals user.userRole "HTRFaculty"}}
+                <a class="nav-link" href="/dashboard/create">Add Emission</a>
+              {{/ifEquals}}
             </ul>
           </li>
 
@@ -65,9 +74,11 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/blog/index">Blogs</a>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
           </li>
+          
           {{/if}}
 
         </ul>
